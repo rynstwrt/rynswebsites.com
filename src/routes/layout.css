@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import '@fontsource-variable/inter';
+@import '@fontsource-variable/roboto';
 @plugin "daisyui";
 @plugin "daisyui/theme" {
     name: "dim";
@@ -51,20 +52,22 @@
 
 @theme {
     --font-inter: "Inter Variable", sans-serif;
+    --font-roboto: "Roboto Variable", sans-serif;
+    --font-open-sans: "Open Sans Variable", sans-serif;
 }
 
 
 @layer base {
     * {
-        /*line-height: 1;*/
+        /*box-sizing: border-box;*/
     }
 
     html, body {
-        height: 100%;
+        /*height: 100%;*/
     }
 
     body {
-        @apply font-inter bg-base-100 text-white;
+        @apply font-inter bg-base-100 text-base-content;
         /*display: flex;*/
         /*flex-direction: column;*/
     }
