@@ -1,19 +1,18 @@
 <script lang="ts">
-
 </script>
 
 
-<div class="w-full h-screen flex flex-col justify-center items-center">
-        <div class="bg-base-200 max-w-md px-5 py-3 rounded-md">
-            <h1 class="text-5xl font-semibold text-primary uppercase leading-15">Ryn's<br/>Websites</h1>
-            <p class="py-5">
-                Welcome to my website!
-                I offer web design, frontend development, and graphic design services.
-            </p>
-            <button class="btn btn-primary">Learn More</button>
-        </div>
-</div>
+<section class="w-full h-screen flex justify-center items-center">
+    <div class="max-w-xs">
+        <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
+        <p class="text-lg mt-4">Your place for web development and graphic design.</p>
+        <button class="btn btn-primary mt-4">Learn More</button>
+    </div>
+</section>
 
+<section class="bg-base-200 p-10">
+    Second section
+</section>
 
 
 <!--<div class="w-full h-full flex flex-col justify-center items-center">-->
@@ -32,9 +31,6 @@
 <!--    </div>-->
 <!--</div>-->
 
-
-<!--<h1>Ryn's Websites</h1>-->
-<!--<button class="btn btn-primary">Button</button>-->
 
 <!--<div class="card w-96 bg-base-200 shadow-sm">-->
 <!--    <div class="card-body">-->

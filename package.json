@@ -27,7 +27,11 @@
 		"@fontsource-variable/inter": "^5.2.8",
 		"@fontsource-variable/open-sans": "^5.2.7",
 		"@fontsource-variable/roboto": "^5.2.10",
+		"@fontsource-variable/source-sans-3": "^5.2.9",
+		"@fontsource-variable/space-grotesk": "^5.2.10",
 		"@sveltejs/enhanced-img": "^0.10.4",
+		"@tsparticles/engine": "^3.9.1",
+		"@tsparticles/slim": "^3.9.1",
 		"daisyui": "^5.5.19"
 	}
 }

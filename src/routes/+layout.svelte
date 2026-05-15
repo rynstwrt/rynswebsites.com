@@ -1,7 +1,6 @@
 <script lang="ts">
     import './layout.css';
-
-    import { resolve } from "$app/paths";
+    import ParticlesBG from "$lib/ui/ParticlesBG.svelte";
 
     let {children} = $props();
 </script>
@@ -19,11 +18,6 @@
 </svelte:head>
 
 
-<!--<div class="navbar absolute collapse-title bg-base-200">-->
-<!--    <div class="navbar-start">-->
-<!--        <a class="btn btn-ghost text-xl font-semibold" href={resolve("/")}>Ryn's Websites</a>-->
-<!--    </div>-->
-<!--</div>-->
-
+<ParticlesBG />
 
 {@render children()}
