@@ -2,6 +2,7 @@
     import Particles, { particlesInit } from '@tsparticles/svelte';
     import { loadSlim } from '@tsparticles/slim';
     import PriceCard from "$lib/ui/PriceCard.svelte";
+    import ContactModal from "$lib/ui/ContactModal.svelte";
 
     let particlesConfig = {
         fullScreen: {
@@ -36,6 +37,9 @@
 </div>
 
 
+<ContactModal/>
+
+
 <section id="landing"
          class="w-full h-screen flex justify-center items-center backdrop-blur-[1px] backdrop-brightness-85 backdrop-contrast-110 bg-transparent">
     <div class="max-w-xs">
@@ -51,21 +55,39 @@
 </section>
 
 
-<!--<section>-->
-<!--    Second section-->
-<!--</section>-->
-
-
 <section id="pricing">
-    <h2 class="text-3xl border-b-2 w-fit pb-1 pr-15 mb-5">Pricing</h2>
+    <div class="section-content">
+        <h2 class="text-3xl border-b-2 w-fit pb-1 pr-5 mb-10">Pricing</h2>
 
-    <div>
-        <PriceCard title="Purchase a Website"
-                   price="$30/hr"
-                   bulletpoints={[
-                       "Create your own customized website",
-                       "Participate in the design process if desired",
-                       "Up to five revisions"
+        <div id="pricing-grid" class="grid gap-4 place-items-center">
+            <PriceCard title="Custom Website"
+                       price="$30/hr"
+                       bulletpoints={[
+                       "Create your own customized website.",
+                       "Participate in the design process if desired.",
+                       "Up to five revisions."
                    ]}/>
+
+            <PriceCard title="Custom Brand Logo"
+                       price="$30/hr"
+                       bulletpoints={[
+                       "Create a logo for your brand or company.",
+                       "Participate in the design process if desired.",
+                       "Up to 10 revisions."
+                   ]}/>
+        </div>
     </div>
 </section>
+
+
+<style>
+    @reference "tailwindcss";
+
+    .section-content {
+        @apply w-full max-w-5xl place-self-center;
+    }
+
+    #pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+</style>
