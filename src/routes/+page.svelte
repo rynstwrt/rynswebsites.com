@@ -1,93 +1,32 @@
 <script lang="ts">
-    import Particles, { particlesInit } from '@tsparticles/svelte';
-    import { loadSlim } from '@tsparticles/slim';
-    import PriceCard from "$lib/ui/PriceCard.svelte";
-    import ContactModal from "$lib/ui/ContactModal.svelte";
-
-    let particlesConfig = {
-        fullScreen: {
-            // enable: true,
-            // zIndex: -1
-        },
-        detectRetina: true,
-        particles: {
-            number: {
-                value: 50,
-            },
-            links: {
-                enable: true,
-                distance: 150,
-                opacity: 0.75,
-            },
-            move: {
-                enable: true,
-                speed: 0.5,
-            }
-        },
-    }
-
-    void particlesInit(async (engine) => {
-        await loadSlim(engine);
-    });
+    import { Button, Card } from "flowbite-svelte";
+    import { CheckCircleSolid } from "flowbite-svelte-icons";
+    import ServiceCard from "$lib/ui/ServiceCard.svelte";
 </script>
 
 
-<div class="w-screen h-screen fixed -z-1 opacity-10">
-    <Particles id="tsparticles" options={particlesConfig}/>
-</div>
-
-
-<ContactModal/>
-
-
-<section id="landing"
-         class="w-full h-screen flex justify-center items-center backdrop-blur-[1px] backdrop-brightness-85 backdrop-contrast-110 bg-transparent">
+<section id="landing" class="w-full h-screen flex justify-center items-center">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
+
         <p class="text-lg mt-4">Your place for web development and graphic design.</p>
-        <button class="btn btn-primary mt-4"
-                onclick={() => {
-                    document.querySelector("section:nth-of-type(2)")?.scrollIntoView();
-                }}>
+
+        <Button class="mt-4 rounded"
+                onclick={() => document.querySelector("section:nth-of-type(2)")?.scrollIntoView()}>
             Learn More
-        </button>
+        </Button>
     </div>
 </section>
 
 
 <section id="pricing">
-    <div class="section-content">
-        <h2 class="text-3xl border-b-2 w-fit pb-1 pr-5 mb-10">Pricing</h2>
-
-        <div id="pricing-grid" class="grid gap-4 place-items-center">
-            <PriceCard title="Custom Website"
-                       price="$30/hr"
-                       bulletpoints={[
-                       "Create your own customized website.",
-                       "Participate in the design process if desired.",
-                       "Up to five revisions."
-                   ]}/>
-
-            <PriceCard title="Custom Brand Logo"
-                       price="$30/hr"
-                       bulletpoints={[
-                       "Create a logo for your brand or company.",
-                       "Participate in the design process if desired.",
-                       "Up to 10 revisions."
-                   ]}/>
-        </div>
-    </div>
+    <ServiceCard title="Custom Website"
+                 price="200"
+                 bulletpoints={[
+                     "Receive a fully customized website.",
+                     "Participate in the design process if desired.",
+                     "Up to 10 revisions included.",
+                     "Each following revision is $15.",
+                     "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
+                 ]}/>
 </section>
-
-
-<style>
-    @reference "tailwindcss";
-
-    .section-content {
-        @apply w-full max-w-5xl place-self-center;
-    }
-
-    #pricing-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-</style>
