@@ -1,5 +1,6 @@
 <script lang="ts">
     import './layout.css';
+    import BreakpointVision from "$lib/ui/BreakpointVision.svelte";
 
     let {children} = $props();
 </script>
@@ -16,5 +17,7 @@
     <meta name="twitter:card" content="summary_large_image"/>
 </svelte:head>
 
+
+<BreakpointVision />
 
 {@render children()}
