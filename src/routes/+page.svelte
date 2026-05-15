@@ -2,11 +2,16 @@
 </script>
 
 
-<section class="w-full h-screen flex justify-center items-center">
+<section id="landing" class="w-full h-screen flex justify-center items-center">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg mt-4">Your place for web development and graphic design.</p>
-        <button class="btn btn-primary mt-4">Learn More</button>
+        <button class="btn btn-primary mt-4"
+                onclick={() => {
+                    document.querySelector("section:nth-of-type(2)")?.scrollIntoView();
+                }}>
+            Learn More
+        </button>
     </div>
 </section>
 

@@ -10,9 +10,6 @@
             await tsParticles.load({
                 id: "particle-background",
                 options: {
-                    // background: {
-                    //     color: "var(--color-primary)",
-                    // },
                     particles: {
                         number: {
                             value: 50,
@@ -34,6 +31,6 @@
 </script>
 
 
-<div class="-z-1 fixed top-0 right-0 bottom-0 left-0 blur-xs backdrop-brightness-75 backdrop-contrast-105">
+<div class="-z-1 fixed top-0 right-0 bottom-0 left-0 blur-xs backdrop-brightness-80 backdrop-contrast-110">
     <div id="particle-background" class="opacity-10"></div>
 </div>
