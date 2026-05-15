@@ -1,4 +1,10 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+
+@theme {
+    --font-inter: "Inter Variable", sans-serif;
+}
 
 
 @layer base {
@@ -11,7 +17,7 @@
     }
 
     body {
-        @apply bg-neutral-800 text-white;
+        @apply font-inter bg-neutral-900 text-white;
         /*display: flex;*/
         /*flex-direction: column;*/
     }
