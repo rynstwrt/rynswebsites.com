@@ -5,7 +5,7 @@
 </script>
 
 
-<div class="card card-border bg-base-100 shadow-lg w-full max-w-md {classes}">
+<div class="card card-border bg-base-100 shadow-lg w-full max-w-100 {classes}">
     <div class="card-body">
         {#if badgeText}
             <span class="badge {badgeClasses}">{badgeText}</span>
