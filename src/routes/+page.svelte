@@ -1,8 +1,9 @@
 <script lang="ts">
     import Particles, { particlesInit } from '@tsparticles/svelte';
     import { loadSlim } from '@tsparticles/slim';
-    import PriceCard from "$lib/ui/PriceCard.svelte";
-    import ContactModal from "$lib/ui/ContactModal.svelte";
+    import PriceCard from "$lib/components/PriceCard.svelte";
+    import ContactModal from "$lib/components/ContactModal.svelte";
+    import PriceCard2 from "$components/PriceCard2.svelte";
 
     let particlesConfig = {
         fullScreen: {
@@ -41,7 +42,7 @@
 
 
 <section id="landing"
-         class="w-full h-screen flex justify-center items-center backdrop-blur-[1px] backdrop-brightness-85 backdrop-contrast-110 bg-transparent">
+         class="w-full h-screen flex justify-center items-center backdrop-brightness-85 backdrop-contrast-110">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg mt-4">Your place for web development and graphic design.</p>
@@ -55,39 +56,86 @@
 </section>
 
 
-<section id="pricing">
-    <div class="section-content">
-        <h2 class="text-3xl border-b-2 w-fit pb-1 pr-5 mb-10">Pricing</h2>
+<!--<section id="pricing">-->
+<!--    <div class="grid justify-items-center place-self-center gap-3 md:grid-cols-2 lg:grid-cols-3">-->
+<!--        <PriceCard2 title="Single Page Website"-->
+<!--                   price="$80"-->
+<!--                   bulletpoints={[-->
+<!--                           "Receive a fully customized website.",-->
+<!--                           "Participate in the design process if desired.",-->
+<!--                           "Frequent progress updates.",-->
+<!--                           "Up to 10 revisions included.",-->
+<!--                           "Each following revision is $15.",-->
+<!--                           "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"-->
+<!--                   ]}-->
+<!--                   badgeText="Most Popular"-->
+<!--                   badgeClasses="badge-sm badge-success"/>-->
 
-        <div id="pricing-grid" class="grid gap-4 place-items-center">
-            <PriceCard title="Custom Website"
-                       price="$30/hr"
-                       bulletpoints={[
-                       "Create your own customized website.",
-                       "Participate in the design process if desired.",
-                       "Up to five revisions."
-                   ]}/>
+<!--        <PriceCard2 title="Multiple Page Website"-->
+<!--                   price="$200"-->
+<!--                   bulletpoints={[-->
+<!--                           "Receive a fully customized website.",-->
+<!--                           "Participate in the design process if desired.",-->
+<!--                           "Frequent progress updates.",-->
+<!--                           "Up to 10 revisions included.",-->
+<!--                           "Each following revision is $15.",-->
+<!--                           "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"-->
+<!--                       ]}/>-->
 
-            <PriceCard title="Custom Brand Logo"
-                       price="$30/hr"
-                       bulletpoints={[
-                       "Create a logo for your brand or company.",
+<!--        <PriceCard2 title="Custom Brand Logo"-->
+<!--                   price="$50"-->
+<!--                   bulletpoints={[-->
+<!--                       "Receive a fully customized logo for your brand or company.",-->
+<!--                       "Participate in the design process if desired.",-->
+<!--                       "Frequent progress updates",-->
+<!--                       "Up to 10 revisions included.",-->
+<!--                       "Each following revision is $15."-->
+<!--                   ]}-->
+<!--                   classes="md:max-lg:col-span-full md:max-lg:max-w-none"/>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<section>
+    <div class="grid justify-items-center place-self-center gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <PriceCard title="Single Page Website"
+                   price="$80"
+                   bulletpoints={[
+                           "Receive a fully customized website.",
+                           "Participate in the design process if desired.",
+                           "Frequent progress updates.",
+                           "Up to 10 revisions included.",
+                           "Each following revision is $15.",
+                           "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
+                   ]}
+                   badgeText="Most Popular"
+                   badgeClasses="badge-sm badge-success"/>
+
+        <PriceCard title="Multiple Page Website"
+                   price="$200"
+                   bulletpoints={[
+                           "Receive a fully customized website.",
+                           "Participate in the design process if desired.",
+                           "Frequent progress updates.",
+                           "Up to 10 revisions included.",
+                           "Each following revision is $15.",
+                           "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
+                       ]}/>
+
+        <PriceCard title="Custom Brand Logo"
+                   price="$50"
+                   bulletpoints={[
+                       "Receive a fully customized logo for your brand or company.",
                        "Participate in the design process if desired.",
-                       "Up to 10 revisions."
-                   ]}/>
-        </div>
+                       "Frequent progress updates",
+                       "Up to 10 revisions included.",
+                       "Each following revision is $15."
+                   ]}
+                   classes="md:max-lg:col-span-full md:max-lg:max-w-none"/>
     </div>
 </section>
 
 
-<style>
-    @reference "tailwindcss";
 
-    .section-content {
-        @apply w-full max-w-5xl place-self-center;
-    }
 
-    #pricing-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-</style>
+

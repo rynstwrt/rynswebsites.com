@@ -7,16 +7,6 @@
 @import '@fontsource-variable/source-sans-3/wght.css';
 
 @plugin "daisyui";
-/*@plugin "daisyui/theme" {*/
-/*    name: "dim";*/
-/*    default: true;*/
-/*    prefersdark: true;*/
-/*    color-scheme: dark;*/
-
-/*    --color-primary: #ff7e27;*/
-/*    --color-primary-content: white;*/
-/*}*/
-
 @plugin "daisyui/theme" {
     name: "dim";
     default: true;
@@ -76,5 +66,5 @@ body {
 }
 
 section:not(#landing) {
-    @apply bg-base-200 p-6;
+    @apply bg-base-300 p-6;
 }
