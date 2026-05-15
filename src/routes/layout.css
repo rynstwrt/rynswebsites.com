@@ -1,1 +1,18 @@
 @import 'tailwindcss';
+
+
+@layer base {
+    * {
+        /*line-height: 1;*/
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        @apply bg-neutral-800 text-white;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+    }
+}

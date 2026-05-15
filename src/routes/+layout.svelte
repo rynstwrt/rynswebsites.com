@@ -1,6 +1,5 @@
 <script lang="ts">
     import './layout.css';
-    // import favicon from '$lib/assets/favicon.svg';
 
     let {children} = $props();
 </script>
@@ -8,7 +7,6 @@
 
 <svelte:head>
     <title>Ryn's Websites</title>
-    <!--<link rel="icon" href={favicon}/>-->
     <meta name="description" content="Ryn's Websites — Web Development and Design."/>
     <meta property="og:title" content="rynstew.art"/>
     <meta property="og:description" content="Ryn's Websites — Web Development and Design."/>
