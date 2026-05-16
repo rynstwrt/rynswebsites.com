@@ -1,40 +1,51 @@
 <script lang="ts">
-    let {title, price, bulletpoints = [], classes="", badgeText=undefined, badgeClasses="badge-success"} = $props();
+    import { Button } from "$ui/button";
+    import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "$ui/card";
+    import { Badge } from "$ui/badge";
+    import Check from "@lucide/svelte/icons/check";
 
-    import Checkmark from "$icons/Checkmark.svelte";
+    let {
+        title,
+        price,
+        description,
+        bulletpoints = [],
+        badgeText = undefined,
+        badgeClasses = "",
+        classes=""
+    } = $props();
 </script>
 
 
-<div class="card card-border bg-base-100 shadow-lg w-full max-w-100 {classes}">
-    <div class="card-body">
+<Card class="w-full max-w-md {classes}">
+    <CardHeader>
         {#if badgeText}
-            <span class="badge {badgeClasses}">{badgeText}</span>
+            <Badge variant="secondary"
+                   class="{badgeClasses} mb-1">
+                {badgeText}
+            </Badge>
         {/if}
 
-        <div class="flex justify-between">
-            <h2 class="card-title text-3xl font-bold">{title}</h2>
-            <span class="text-2xl font-light block">{price}</span>
-        </div>
+        <CardTitle class="text-3xl font-bold flex justify-between">
+            <!--Custom<br>Website-->
+            <span class="max-w-50">{title}</span>
+            <span class="font-thin text-2xl">{price}</span>
+        </CardTitle>
 
-        {#if bulletpoints.length}
-            <ul class="mt-6 flex flex-col gap-2 text-base">
-                {#each bulletpoints as bp}
-                    <li class="flex">
-                        <Checkmark classes="w-6 min-w-6 h-6 me-1 text-success"/>
-                        {bp}
-                    </li>
-                {/each}
-            </ul>
-        {/if}
+        <CardDescription class="text-base">{description}</CardDescription>
+    </CardHeader>
 
-        <div class="card-actions mt-6">
-            <button class="btn btn-primary btn-block"
-                    onclick={() => {
-                        //@ts-ignore
-                        contact_modal.showModal();
-                    }}>
-                Purchase
-            </button>
-        </div>
-    </div>
-</div>
+    <CardContent class="h-full">
+        <ul class="space-y-2">
+            {#each bulletpoints as bp}
+                <li class="flex text-sm font-light">
+                    <Check class="w-5 min-w-5 h-5 me-1.5 text-green-300"/>
+                    {bp}
+                </li>
+            {/each}
+        </ul>
+    </CardContent>
+
+    <CardFooter>
+        <Button class="w-full" size="lg">Purchase</Button>
+    </CardFooter>
+</Card>

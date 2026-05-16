@@ -1,5 +1,6 @@
 <script lang="ts">
-    let {classes} = $props();
+    // let {classes = ""} = $props();
+    let props = $props();
 </script>
 
 
@@ -7,7 +8,7 @@
      width="1em"
      height="1em"
      viewBox="0 0 24 24"
-     class={classes}>
+     {...props}>
     <path d="M0 0h24v24H0z" fill="none"/>
     <path fill="none"
           stroke="currentColor"

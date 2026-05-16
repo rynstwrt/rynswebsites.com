@@ -18,6 +18,6 @@
 </svelte:head>
 
 
-<BreakpointVision enabled={true}/>
+<BreakpointVision enabled={false}/>
 
 {@render children()}
