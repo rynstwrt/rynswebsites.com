@@ -14,14 +14,12 @@
 	},
 	"devDependencies": {
 		"@fontsource-variable/inter": "^5.2.8",
-		"@iconify/json": "^2.2.473",
 		"@internationalized/date": "^3.12.1",
 		"@lucide/svelte": "^1.16.0",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.59.1",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "^4.3.0",
-		"bits-ui": "^2.18.1",
 		"clsx": "^2.1.1",
 		"embla-carousel-svelte": "^8.6.0",
 		"shadcn-svelte": "^1.2.7",
@@ -40,11 +38,7 @@
 		"@fontsource-variable/roboto": "^5.2.10",
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource-variable/space-grotesk": "^5.2.10",
-		"@iconify-svelte/flowbite": "^1.0.2",
 		"@sveltejs/enhanced-img": "^0.10.4",
-		"@tsparticles/engine": "^3.9.1",
-		"@tsparticles/slim": "^3.9.1",
-		"@tsparticles/svelte": "^3.1.1",
-		"daisyui": "^5.5.19"
+		"embla-carousel-autoplay": "^8.6.0"
 	}
 }

@@ -64,7 +64,14 @@
     <h2 class="text-3xl font-medium">Web Gallery</h2>
     <p class="text-lg text-gray-500">Scroll to browse the web gallery.</p>
 
-    <ImageCarousel images={Array(5)}/>
+    <ImageCarousel images={[
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+    ]}/>
 </section>
 
 
@@ -72,7 +79,14 @@
     <h2 class="text-3xl font-medium">Design Gallery</h2>
     <p class="text-lg text-gray-500">Scroll to browse the design gallery.</p>
 
-    <ImageCarousel images={Array(5)}/>
+    <ImageCarousel images={[
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+        {src: `https://picsum.photos/seed/${Math.random()}/500/500`, alt: `${Math.random()}`},
+    ]}/>
 </section>
 
 
