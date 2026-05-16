@@ -32,9 +32,6 @@ importers:
       '@tsparticles/engine':
         specifier: ^3.9.1
         version: 3.9.1
-      '@tsparticles/preset-confetti':
-        specifier: ^3.2.0
-        version: 3.2.0
       '@tsparticles/slim':
         specifier: ^3.9.1
         version: 3.9.1
@@ -44,9 +41,6 @@ importers:
       daisyui:
         specifier: ^5.5.19
         version: 5.5.19
-      particles.js:
-        specifier: ^2.0.0
-        version: 2.0.0
     devDependencies:
       '@iconify/json':
         specifier: ^2.2.473
@@ -607,23 +601,14 @@ packages:
   '@tsparticles/plugin-easing-quad@3.9.1':
     resolution: {integrity: sha512-C2UJOca5MTDXKUTBXj30Kiqr5UyID+xrY/LxicVWWZPczQW2bBxbIbfq9ULvzGDwBTxE2rdvIB8YFKmDYO45qw==}
 
-  '@tsparticles/plugin-emitters@3.9.1':
-    resolution: {integrity: sha512-h7opR8SoFWBmVHceDLJUerLENaPfkJSh2zQYvzmLj2L+V3VLS1QDgty+4QZVeZfqNROmgQw2eLFA5El1E0sqqw==}
-
   '@tsparticles/plugin-hex-color@3.9.1':
     resolution: {integrity: sha512-vZgZ12AjUicJvk7AX4K2eAmKEQX/D1VEjEPFhyjbgI7A65eX72M465vVKIgNA6QArLZ1DLs7Z787LOE6GOBWsg==}
 
   '@tsparticles/plugin-hsl-color@3.9.1':
     resolution: {integrity: sha512-jJd1iGgRwX6eeNjc1zUXiJivaqC5UE+SC2A3/NtHwwoQrkfxGWmRHOsVyLnOBRcCPgBp/FpdDe6DIDjCMO715w==}
 
-  '@tsparticles/plugin-motion@3.9.1':
-    resolution: {integrity: sha512-I/356NHCiMUgFzWjAHYKO7YvBqKtHSktIPgTRruqlruyrAcwzjkT55ZQ1K5EcJLWETkF1bfG2VpJBRu8ksf9mw==}
-
   '@tsparticles/plugin-rgb-color@3.9.1':
     resolution: {integrity: sha512-SBxk7f1KBfXeTnnklbE2Hx4jBgh6I6HOtxb+Os1gTp0oaghZOkWcCD2dP4QbUu7fVNCMOcApPoMNC8RTFcy9wQ==}
-
-  '@tsparticles/preset-confetti@3.2.0':
-    resolution: {integrity: sha512-47T8vkV37K5ZKGYZOuLtTd4ONSpnuLQ+LbKnFoh3g4zrgqzknmKTuVEFQAXQFigWWjDnHbATEnnMOIZkz+xWXQ==}
 
   '@tsparticles/shape-circle@3.9.1':
     resolution: {integrity: sha512-DqZFLjbuhVn99WJ+A9ajz9YON72RtCcvubzq6qfjFmtwAK7frvQeb6iDTp6Ze9FUipluxVZWVRG4vWTxi2B+/g==}
@@ -666,9 +651,6 @@ packages:
   '@tsparticles/updater-out-modes@3.9.1':
     resolution: {integrity: sha512-cKQEkAwbru+hhKF+GTsfbOvuBbx2DSB25CxOdhtW2wRvDBoCnngNdLw91rs+0Cex4tgEeibkebrIKFDDE6kELg==}
 
-  '@tsparticles/updater-roll@3.9.1':
-    resolution: {integrity: sha512-zl4JeM3gUBJ0uttmIsond3lrZ3f3AkItFeS0Lhj/7jiCKfUoRyyOMrcBk8R1AhW7lI+7ko1iBs3jhO0jnxz9vg==}
-
   '@tsparticles/updater-rotate@3.9.1':
     resolution: {integrity: sha512-9BfKaGfp28JN82MF2qs6Ae/lJr9EColMfMTHqSKljblwbpVDHte4umuwKl3VjbRt87WD9MGtla66NTUYl+WxuQ==}
 
@@ -677,12 +659,6 @@ packages:
 
   '@tsparticles/updater-stroke-color@3.9.1':
     resolution: {integrity: sha512-3x14+C2is9pZYTg9T2TiA/aM1YMq4wLdYaZDcHm3qO30DZu5oeQq0rm/6w+QOGKYY1Z3Htg9rlSUZkhTHn7eDA==}
-
-  '@tsparticles/updater-tilt@3.9.1':
-    resolution: {integrity: sha512-PB2yaoyXRmSk4iIVgjtRrzOxXMK9mjeAQHIJGtT4faq46Z8cbIIEFgjTwqrUV8qOrNg/h4sm5NE/s0qsTYjp1Q==}
-
-  '@tsparticles/updater-wobble@3.9.1':
-    resolution: {integrity: sha512-c99Ogy9q4QWO+zsDXol0UnpUwZiY2UucFb8ltuDv9AlbGUeprygoub8jhgT5pEDv+GdzWOJGSgq7rfgv9cHBrg==}
 
   '@tybys/wasm-util@0.10.2':
     resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
@@ -902,9 +878,6 @@ packages:
 
   package-manager-detector@1.6.0:
     resolution: {integrity: sha512-61A5ThoTiDG/C8s8UMZwSorAGwMJ0ERVGj2OjoW5pAalsNOg15+iQiPzrLJ4jhZ1HJzmC2PIHT2oEiH3R5fzNA==}
-
-  particles.js@2.0.0:
-    resolution: {integrity: sha512-8e0JIqkRbMMPlFBnF9f+92hX1s07jdkd3tqB8uHE9L+cwGGjIYjQM7QLgt0FQ5MZp6SFFYYDm/Y48pqK3ZvJOQ==}
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
@@ -1530,10 +1503,6 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.9.1
 
-  '@tsparticles/plugin-emitters@3.9.1':
-    dependencies:
-      '@tsparticles/engine': 3.9.1
-
   '@tsparticles/plugin-hex-color@3.9.1':
     dependencies:
       '@tsparticles/engine': 3.9.1
@@ -1542,26 +1511,9 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.9.1
 
-  '@tsparticles/plugin-motion@3.9.1':
-    dependencies:
-      '@tsparticles/engine': 3.9.1
-
   '@tsparticles/plugin-rgb-color@3.9.1':
     dependencies:
       '@tsparticles/engine': 3.9.1
-
-  '@tsparticles/preset-confetti@3.2.0':
-    dependencies:
-      '@tsparticles/basic': 3.9.1
-      '@tsparticles/engine': 3.9.1
-      '@tsparticles/plugin-emitters': 3.9.1
-      '@tsparticles/plugin-motion': 3.9.1
-      '@tsparticles/shape-square': 3.9.1
-      '@tsparticles/updater-life': 3.9.1
-      '@tsparticles/updater-roll': 3.9.1
-      '@tsparticles/updater-rotate': 3.9.1
-      '@tsparticles/updater-tilt': 3.9.1
-      '@tsparticles/updater-wobble': 3.9.1
 
   '@tsparticles/shape-circle@3.9.1':
     dependencies:
@@ -1641,10 +1593,6 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.9.1
 
-  '@tsparticles/updater-roll@3.9.1':
-    dependencies:
-      '@tsparticles/engine': 3.9.1
-
   '@tsparticles/updater-rotate@3.9.1':
     dependencies:
       '@tsparticles/engine': 3.9.1
@@ -1654,14 +1602,6 @@ snapshots:
       '@tsparticles/engine': 3.9.1
 
   '@tsparticles/updater-stroke-color@3.9.1':
-    dependencies:
-      '@tsparticles/engine': 3.9.1
-
-  '@tsparticles/updater-tilt@3.9.1':
-    dependencies:
-      '@tsparticles/engine': 3.9.1
-
-  '@tsparticles/updater-wobble@3.9.1':
     dependencies:
       '@tsparticles/engine': 3.9.1
 
@@ -1815,8 +1755,6 @@ snapshots:
   obug@2.1.1: {}
 
   package-manager-detector@1.6.0: {}
-
-  particles.js@2.0.0: {}
 
   pathe@2.0.3: {}
 
