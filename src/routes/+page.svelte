@@ -1,5 +1,8 @@
 <script lang="ts">
     import { Button } from "$ui/button";
+    import * as Form from "$ui/form";
+    import * as Field from "$ui/field";
+    import { Input } from "$ui/input";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
 </script>
@@ -134,11 +137,49 @@
 <!--                <textarea class="textarea w-full"-->
 <!--                          placeholder="Add any additional info here." rows="6"></textarea>-->
 
-<!--                <button class="btn btn-primary btn-block mt-4">Submit</button>-->
+<!--                <button class="bt n btn-primary btn-block mt-4">Submit</button>-->
 <!--            </div>-->
 <!--        </div>-->
 <!--    </div>-->
 <!--</section>-->
+
+
+<footer>
+    <!--<div class="backdrop-contrast-110 min-h-60 p-6 flex justify-between gap-6">-->
+    <div class="min-h-60 p-6 flex justify-between gap-6 border-t mt-6">
+        <div class="max-w-xs">
+            <h2 class="text-3xl font-normal">Ryn's Websites</h2>
+            <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
+            <Button variant="outline"
+                    class="mt-8 w-full"
+                    onclick={() => document.body.scrollIntoView()}>
+                Back to Top
+            </Button>
+        </div>
+
+        <form class="flex-1 max-w-sm">
+            <Field.Group>
+                <Field.Set>
+                    <Field.Legend>Contact</Field.Legend>
+                    <Field.Description>Reach out with any questions!</Field.Description>
+                    <Field.Group>
+                        <Field.Field>
+                            <Field.Label>Name</Field.Label>
+                            <Input id="name" placeholder="John Doe" aria-label="name"/>
+                        </Field.Field>
+                    </Field.Group>
+                </Field.Set>
+            </Field.Group>
+        </form>
+    </div>
+
+    <p class="text-xs text-center py-2">
+        Copyright © {new Date().getFullYear()}, rynswebsites.com. All Rights Reserved.
+    </p>
+    <!--<p class="text-xs text-center py-3 backdrop-contrast-110 backdrop-brightness-80">-->
+    <!--    Copyright © {new Date().getFullYear()}, rynswebsites.com. All Rights Reserved.-->
+    <!--</p>-->
+</footer>
 
 
 <style>
