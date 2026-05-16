@@ -55,7 +55,15 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+
+    /*&:not(canvas), &:not(#ts-particles) {*/
+    /*    z-index: 10;*/
+    /*}*/
 }
+
+/**:not(canvas) {*/
+/*    z-index: 2;*/
+/*}*/
 
 html, body {
     /*height: 100%;*/
@@ -66,5 +74,5 @@ body {
 }
 
 section:not(#landing) {
-    @apply bg-base-300 p-6;
+    @apply p-6;
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Particles, { particlesInit } from '@tsparticles/svelte';
+    // import Particles, { particlesInit } from '@tsparticles/svelte';
     import { loadSlim } from '@tsparticles/slim';
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ContactModal from "$lib/components/ContactModal.svelte";
@@ -28,22 +28,17 @@
         },
     }
 
-    void particlesInit(async (engine) => {
-        await loadSlim(engine);
-    });
+    // void particlesInit(async (engine) => {
+    //     await loadSlim(engine);
+    // });
 </script>
-
-
-<div class="w-screen h-screen fixed -z-1 opacity-10">
-    <Particles id="tsparticles" options={particlesConfig}/>
-</div>
 
 
 <ContactModal/>
 
 
 <section id="landing"
-         class="w-full h-screen flex justify-center items-center backdrop-brightness-85 backdrop-contrast-110">
+         class="w-full h-screen flex justify-center items-center backdrop-contrast-100 backdrop-blur-[3px]">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg mt-4">Your place for web development and graphic design.</p>
@@ -246,6 +241,7 @@
                           placeholder="Add any additional info here." rows="6"></textarea>
 
                 <button class="btn btn-primary btn-block mt-4">Submit</button>
+            </div>
         </div>
     </div>
 </section>
