@@ -16,10 +16,10 @@
 
 
 <section id="landing"
-         class="h-full flex justify-center items-center backdrop-blur-[2px] backdrop-contrast-105 backdrop-brightness-80">
+         class="h-full flex justify-center items-center backdrop-contrast-105 backdrop-brightness-60">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
-        <p class="text-lg my-4">Your place for web development and graphic design.</p>
+        <p class="text-lg my-4 text-gray-400">Your place for web development and graphic design.</p>
         <Button variant="default"
                 size="lg"
                 onclick={() => document.querySelector("#price-section")?.scrollIntoView({block: "start"})}>

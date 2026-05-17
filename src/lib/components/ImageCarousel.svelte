@@ -38,25 +38,12 @@
         setApi={emblaApi => api = emblaApi}>
     <Carousel.Content class="items-center">
         {#each images as image}
-            <!--<Carousel.Item class="md:basis-1/2 lg:basis-1/3 flex items-center justify-center">-->
             <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
                 <div>
                     <enhanced:img src={image.src}
                                   alt={image.alt}
                                   class="w-full min-w-full shadow-xl rounded"/>
-                    <!--<Card.Root>-->
-                    <!--<Card.Content class="flex aspect-square items-center justify-center p-6">-->
-                    <!--<enhanced:img src={image.src}-->
-                    <!--              alt={image.alt}-->
-                    <!--              class="min-w-full min-h-full shadow-xl rounded"/>-->
-                    <!--</Card.Content>-->
-                    <!--</Card.Root>-->
                 </div>
-                <!--<div class="p-1 w-fit mx-auto">-->
-                <!--    <enhanced:img src={image.src}-->
-                <!--                  alt={image.alt}-->
-                <!--                  class="w-full min-w-full shadow-xl rounded"/>-->
-                <!--</div>-->
             </Carousel.Item>
         {/each}
     </Carousel.Content>
