@@ -24,7 +24,7 @@
 </script>
 
 
-<Card class="w-full max-w-md shadow-lg {classes}">
+<Card class="w-full max-w-md shadow-lg hover:shadow-xl transition-shadow {classes}">
     <CardHeader>
         {#if badgeText}
             <Badge variant="secondary"

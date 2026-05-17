@@ -83,7 +83,7 @@
         {src: "img/websites/ilovefoxes.png", alt: "ilovefoxes.org"},
         {src: "img/websites/offtheblock.png", alt: "offtheblock.lol"},
         {src: "img/websites/trojanhorse.zip.png", alt: "trojanhorse.zip"},
-        {src: "img/websites/webresumebuilder.png", alt: "Web Resume Builder"},
+        // {src: "img/websites/webresumebuilder.png", alt: "Web Resume Builder"},
     ]}/>
 </section>
 
