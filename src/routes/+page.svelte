@@ -3,7 +3,7 @@
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import ContactDialog from "$lib/components/ContactDialog.svelte";
-    import ParticleBG from "$lib/components/ParticleBG.svelte";
+    import LandingBg from "../lib/components/LandingBG.svelte";
 
     let contactDialogOpen = $state(false);
 
@@ -11,7 +11,7 @@
 </script>
 
 
-<ParticleBG/>
+<LandingBg/>
 
 
 <ContactDialog bind:open={contactDialogOpen}/>
