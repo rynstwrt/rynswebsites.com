@@ -35,15 +35,15 @@
 
 
 <footer>
-    <div class="min-h-60 p-6 flex justify-between gap-6 border-t mt-6">
+    <div class="p-6 flex justify-between gap-6 border-t mt-6">
         <div class="max-w-xs">
             <h2 class="text-3xl font-normal">Ryn's Websites</h2>
             <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
-            <Button variant="outline"
-                    class="mt-8 w-full"
-                    onclick={() => document.body.scrollIntoView()}>
-                Back to Top
-            </Button>
+            <!--<Button variant="outline"-->
+            <!--        class="mt-8 w-full"-->
+            <!--        onclick={() => document.body.scrollIntoView()}>-->
+            <!--    Back to Top-->
+            <!--</Button>-->
         </div>
 
         <form method="POST" class="flex-1 max-w-sm" use:enhance>

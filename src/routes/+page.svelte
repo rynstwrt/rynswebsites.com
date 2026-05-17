@@ -2,11 +2,8 @@
     import { Button } from "$ui/button";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
-    import Footer from "$lib/components/Footer.svelte";
     import ContactDialog from "$lib/components/ContactDialog.svelte";
     import ParticleBG from "$lib/components/ParticleBG.svelte";
-    import { Textarea } from "$ui/textarea";
-    import { Input } from "$ui/input";
 
     let contactDialogOpen = $state(false);
 </script>
@@ -104,77 +101,46 @@
 </section>
 
 
-<!--<section id="contact">-->
-<!--    <div class="max-w-6xl w-full mx-auto">-->
-<!--        <h2 class="text-3xl font-medium">Contact Me</h2>-->
-
-<!--        <div class="flex gap-4 ">-->
-<!--            <fieldset class="fieldset bg-base-100 border-base-100 rounded-box border p-3 w-md gap-2 flex-1">-->
-<!--                <legend class="fieldset-legend text-base uppercase">Ask a Question</legend>-->
-
-<!--                <label class="input validator w-full input-md">-->
-<!--                    <Email class="h-[1em] opacity-50"/>-->
-<!--                    <input type="email" placeholder="mail@site.com" required/>-->
-<!--                </label>-->
-
-<!--                <textarea class="textarea w-full"-->
-<!--                          placeholder="Type your questions here." rows="8"></textarea>-->
-
-<!--                <button class="btn btn-primary btn-block mt-2">Submit</button>-->
-<!--            </fieldset>-->
-
-<!--            <div class="flex-1 bg-base-100 p-4 rounded-md">-->
-<!--                <fieldset class="fieldset">-->
-<!--                    <legend class="fieldset-legend pb-1">Email</legend>-->
-<!--                    <label class="input validator w-full input-md">-->
-<!--                        <Email class="h-[1em] opacity-50"/>-->
-<!--                        <input type="email" placeholder="mail@site.com" required/>-->
-<!--                    </label>-->
-<!--                </fieldset>-->
-
-<!--                <fieldset class="fieldset">-->
-<!--                    <legend class="fieldset-legend pb-1">Product</legend>-->
-<!--                    <select class="select w-full" required>-->
-<!--                        <option disabled selected>Select a service</option>-->
-<!--                        <option>Single Page Website</option>-->
-<!--                        <option>Multi Page Website</option>-->
-<!--                        <option>Brand Logo</option>-->
-<!--                    </select>-->
-<!--                </fieldset>-->
-
-<!--                <fieldset class="fieldset">-->
-<!--                    <legend class="fieldset-legend pb-1">Additional Info</legend>-->
-<!--                </fieldset>-->
-<!--                <textarea class="textarea w-full"-->
-<!--                          placeholder="Add any additional info here." rows="6"></textarea>-->
-
-<!--                <button class="bt n btn-primary btn-block mt-4">Submit</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-
-<footer>
-    <div class="min-h-60 p-6 flex justify-between gap-6 border-t mt-6">
+<footer class="backdrop-brightness-80">
+    <div class="p-10 flex justify-between gap-6 mt-6">
         <div class="max-w-xs">
-            <h2 class="text-3xl font-normal">Ryn's Websites</h2>
+            <h2 class="text-2xl font-medium">Ryn's Websites</h2>
             <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
-            <Button variant="outline"
-                    class="mt-8 w-full"
-                    onclick={() => document.body.scrollIntoView()}>
-                Back to Top
+            <p class="text-xs font-light text-neutral-300 mt-6">
+                © {new Date().getFullYear()} All Rights Reserved.
+            </p>
+        </div>
+
+        <div class="space-y-1 *:font-light *:block">
+            <Button variant="ghost"
+                    class=""
+                    size="sm"
+                    onclick={() => contactDialogOpen = true}>Contact
+            </Button>
+
+            <Button variant="ghost"
+                    class=""
+                    size="sm"
+                    asChild>
+                <a href="https://rynstew.art/resume" target="_blank">Résumé</a>
+            </Button>
+
+            <Button variant="ghost"
+                    class=""
+                    size="sm"
+                    asChild>
+                <a href="https://rynstew.art/resume" target="_blank">Portfolio</a>
+            </Button>
+
+            <Button variant="ghost"
+                    class=""
+                    size="sm"
+                    onclick={() => document.body.scrollIntoView()}>Back to top
             </Button>
         </div>
-        <div class="flex-1">
-            <Button>Contact</Button>
-        </div>
     </div>
-
-    <p class="text-xs text-center py-2">
-        Copyright © {new Date().getFullYear()}, rynswebsites.com. All Rights Reserved.
-    </p>
 </footer>
+
 
 <style>
     @reference "tailwindcss";

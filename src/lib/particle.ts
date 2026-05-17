@@ -1,5 +1,5 @@
 export class Particle {
-    ctx: CanvasRenderingContext2D;
+    ctx: CanvasRenderingContext2D | undefined;
     position: { x: number, y: number };
     initSpeed: number;
     speed: number;
