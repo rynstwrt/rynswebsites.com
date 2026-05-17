@@ -27,6 +27,13 @@
         }
 
         update() {
+            if (this.position.x <= 0 || this.position.x >= innerWidth) {
+                this.direction.x *= -1;
+            }
+
+            if (this.position.y <= 0 || this.position.y >= innerHeight)
+                this.direction.y *= -1;
+
             this.position.x += this.direction.x * this.speed;
             this.position.y += this.direction.y * this.speed;
         }
