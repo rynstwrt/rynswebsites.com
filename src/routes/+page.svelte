@@ -6,22 +6,25 @@
     import ParticleBG from "$lib/components/ParticleBG.svelte";
 
     let contactDialogOpen = $state(false);
+
+
 </script>
 
 
 <ParticleBG/>
 
+
 <ContactDialog bind:open={contactDialogOpen}/>
 
-<div id="landing-img" class="absolute top-0 left-0 w-screen h-screen -z-2 opacity-5"></div>
 
-<section id="landing" class="h-full flex justify-center items-center backdrop-blur-[2px] backdrop-contrast-105 backdrop-brightness-80">
+<section id="landing"
+         class="h-full flex justify-center items-center backdrop-blur-[2px] backdrop-contrast-105 backdrop-brightness-80">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4">Your place for web development and graphic design.</p>
         <Button variant="default"
                 size="lg"
-                onclick={() => document.querySelector("#price-section")?.scrollIntoView({block: "center"})}>
+                onclick={() => document.querySelector("#price-section")?.scrollIntoView({block: "start"})}>
             Learn More
         </Button>
     </div>
@@ -122,21 +125,23 @@
             <Button variant="ghost"
                     class=""
                     size="sm"
-                    asChild>
-                <a href="https://rynstew.art/resume" target="_blank">Résumé</a>
+                    href="https://rynstew.art/resume"
+                    target="_blank">
+                Résumé
             </Button>
 
             <Button variant="ghost"
                     class=""
                     size="sm"
-                    asChild>
-                <a href="https://rynstew.art/resume" target="_blank">Portfolio</a>
+                    href="https://rynstew.art/portfolio"
+                    target="_blank">
+                Portfolio
             </Button>
 
             <Button variant="ghost"
                     class=""
                     size="sm"
-                    onclick={() => document.body.scrollIntoView()}>Back to top
+                    onclick={() => document.body.scrollIntoView({block: "start"})}>Back to top
             </Button>
         </div>
     </div>
@@ -145,14 +150,6 @@
 
 <style>
     @reference "tailwindcss";
-
-    #landing-img {
-        background-image: url("$lib/assets/img/city.webp");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
 
     section:not(#landing) {
         @apply p-6;

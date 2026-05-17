@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { Particle } from "$lib/particle.ts";
+    import { Particle } from "$lib/particle";
 
     let canvas: HTMLCanvasElement | undefined;
     let ctx = $derived(canvas?.getContext("2d"));
@@ -65,6 +65,9 @@
 <svelte:window bind:innerWidth bind:innerHeight></svelte:window>
 
 
+<div id="landing-img" class="absolute top-0 left-0 w-screen h-screen -z-2 opacity-5"></div>
+
+
 <canvas bind:this={canvas}
         width={innerWidth}
         height={innerHeight}
@@ -76,3 +79,14 @@
             });
         }}>
 </canvas>
+
+
+<style>
+    #landing-img {
+        background-image: url("$lib/assets/img/city.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>

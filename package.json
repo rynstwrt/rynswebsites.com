@@ -41,6 +41,7 @@
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource-variable/space-grotesk": "^5.2.10",
 		"@sveltejs/enhanced-img": "^0.10.4",
+		"@types/node": "^25.8.0",
 		"@validex/core": "^1.0.3",
 		"bits-ui": "^2.18.1",
 		"embla-carousel-autoplay": "^8.6.0",
