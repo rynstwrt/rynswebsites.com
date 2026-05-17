@@ -4,8 +4,10 @@
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import ContactDialog from "$lib/components/ContactDialog.svelte";
     import LandingBg from "../lib/components/LandingBG.svelte";
+    import ImageDialog from "$lib/components/ImageDialog.svelte";
 
     let contactDialogOpen = $state(false);
+    let imageDialogOpen = $state(true);
 </script>
 
 
