@@ -11,16 +11,20 @@
         opts={{
                loop: true,
                align: "center"
-           }}
-        plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
->
+        }}
+        plugins={[
+            Autoplay({
+                delay: 3000,
+                stopOnInteraction: true
+            })
+        ]}>
     <Carousel.Content>
         {#each images as image}
-            <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
+            <Carousel.Item class="md:basis-1/2 lg:basis-1/3 flex items-center justify-center">
                 <div class="p-1 w-fit mx-auto">
-                    <img src={image.src}
-                         alt={image.alt}
-                         class="block w-full min-w-full shadow-lgr rounded"/>
+                    <enhanced:img src={image.src}
+                                  alt={image.alt}
+                                  class="block w-full min-w-full shadow-lg rounded"/>
                 </div>
             </Carousel.Item>
         {/each}
