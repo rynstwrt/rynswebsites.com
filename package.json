@@ -42,6 +42,7 @@
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource-variable/space-grotesk": "^5.2.10",
 		"@sveltejs/enhanced-img": "^0.10.4",
-		"embla-carousel-autoplay": "^8.6.0"
+		"embla-carousel-autoplay": "^8.6.0",
+		"zod": "^4.4.3"
 	}
 }

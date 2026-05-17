@@ -26,6 +26,9 @@ importers:
       embla-carousel-autoplay:
         specifier: ^8.6.0
         version: 8.6.0(embla-carousel@8.6.0)
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
     devDependencies:
       '@fontsource-variable/inter':
         specifier: ^5.2.8
@@ -2252,5 +2255,4 @@ snapshots:
       zod: 4.4.3
     optional: true
 
-  zod@4.4.3:
-    optional: true
+  zod@4.4.3: {}

@@ -1,6 +1,13 @@
 <script lang="ts">
     import { Button } from "$ui/button";
-    import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "$ui/card";
+    import {
+        Card,
+        CardHeader,
+        CardTitle,
+        CardDescription,
+        CardContent,
+        CardFooter
+    } from "$ui/card";
     import { Badge } from "$ui/badge";
     import Check from "@lucide/svelte/icons/check";
 
@@ -11,7 +18,8 @@
         bulletpoints = [],
         badgeText = undefined,
         badgeClasses = "",
-        classes=""
+        classes="",
+        onClick
     } = $props();
 </script>
 
@@ -46,6 +54,6 @@
     </CardContent>
 
     <CardFooter>
-        <Button class="w-full" size="lg">Purchase</Button>
+        <Button class="w-full" size="lg" onclick={() => onClick()}>Purchase</Button>
     </CardFooter>
 </Card>

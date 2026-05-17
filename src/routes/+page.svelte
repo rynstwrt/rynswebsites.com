@@ -1,11 +1,15 @@
 <script lang="ts">
     import { Button } from "$ui/button";
-    import * as Form from "$ui/form";
-    import * as Field from "$ui/field";
-    import { Input } from "$ui/input";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
+    import Footer from "$lib/components/Footer.svelte";
+    import ContactDialog from "$lib/components/ContactDialog.svelte";
+
+    let contactDialogOpen = $state(false);
 </script>
+
+
+<ContactDialog bind:open={contactDialogOpen}/>
 
 
 <section id="landing"
@@ -14,7 +18,6 @@
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4">Your place for web development and graphic design.</p>
         <Button variant="default"
-                class="rounded-sm"
                 size="lg"
                 onclick={() => document.querySelector("#price-section")?.scrollIntoView({block: "center"})}>
             Learn More
@@ -36,7 +39,8 @@
                            "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
                    ]}
                    badgeText="Most Popular"
-                   badgeClasses="bg-green-300 text-green-800"/>
+                   badgeClasses="bg-green-300 text-green-800"
+                   onClick={() => contactDialogOpen = true}/>
 
         <PriceCard title="Multiple Page Website"
                    price="$200"
@@ -47,7 +51,8 @@
                            "Up to 10 revisions included.",
                            "Each following revision is $15.",
                            "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
-                       ]}/>
+                       ]}
+                   onClick={() => contactDialogOpen = true}/>
 
         <PriceCard title="Custom Brand Logo"
                    price="$50"
@@ -58,7 +63,9 @@
                        "Up to 10 revisions included.",
                        "Each following revision is $15."
                    ]}
-                   classes="md:max-lg:col-span-full md:max-lg:max-w-none"/>
+                   classes="md:max-lg:col-span-full md:max-lg:max-w-none"
+                   onClick={() => contactDialogOpen = true}/>
+
     </div>
 </section>
 
@@ -144,42 +151,7 @@
 <!--</section>-->
 
 
-<footer>
-    <!--<div class="backdrop-contrast-110 min-h-60 p-6 flex justify-between gap-6">-->
-    <div class="min-h-60 p-6 flex justify-between gap-6 border-t mt-6">
-        <div class="max-w-xs">
-            <h2 class="text-3xl font-normal">Ryn's Websites</h2>
-            <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
-            <Button variant="outline"
-                    class="mt-8 w-full"
-                    onclick={() => document.body.scrollIntoView()}>
-                Back to Top
-            </Button>
-        </div>
-
-        <form class="flex-1 max-w-sm">
-            <Field.Group>
-                <Field.Set>
-                    <Field.Legend>Contact</Field.Legend>
-                    <Field.Description>Reach out with any questions!</Field.Description>
-                    <Field.Group>
-                        <Field.Field>
-                            <Field.Label>Name</Field.Label>
-                            <Input id="name" placeholder="John Doe" aria-label="name"/>
-                        </Field.Field>
-                    </Field.Group>
-                </Field.Set>
-            </Field.Group>
-        </form>
-    </div>
-
-    <p class="text-xs text-center py-2">
-        Copyright © {new Date().getFullYear()}, rynswebsites.com. All Rights Reserved.
-    </p>
-    <!--<p class="text-xs text-center py-3 backdrop-contrast-110 backdrop-brightness-80">-->
-    <!--    Copyright © {new Date().getFullYear()}, rynswebsites.com. All Rights Reserved.-->
-    <!--</p>-->
-</footer>
+<!--<Footer/>-->
 
 
 <style>
