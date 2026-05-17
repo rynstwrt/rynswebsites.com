@@ -2,9 +2,7 @@
     import * as Carousel from "$ui/carousel";
     import Autoplay from "embla-carousel-autoplay";
     import type { CarouselAPI } from "$ui/carousel/context";
-    import ContactDialog from "$lib/components/ContactDialog.svelte";
     import ImageDialog from "$lib/components/ImageDialog.svelte";
-    import { Button } from "$ui/button";
 
     let {images} = $props();
 
@@ -14,6 +12,7 @@
 
     const count = $derived(api ? api.scrollSnapList().length : 0);
     let current = $state(0);
+    let clickedImage: object = $state({src: "", alt: ""});
 
     $effect(() => {
         if (api) {
@@ -28,7 +27,7 @@
 
 
 <ImageDialog bind:open={imageDialogOpen}
-             image={images[current]}/>
+             image={clickedImage}/>
 
 
 <Carousel.Root
@@ -46,7 +45,12 @@
         setApi={emblaApi => api = emblaApi}>
     <Carousel.Content class="items-center">
         {#each images as image}
-            <Carousel.Item class="md:basis-1/2 lg:basis-1/3" onclick={() => imageDialogOpen = true}>
+            <Carousel.Item class="md:basis-1/2 lg:basis-1/3"
+                           onclick={(event) => {
+                               const target: any = event.target;
+                               clickedImage = {src: target?.src, alt: target?.alt}
+                               imageDialogOpen = true
+                           }}>
                 <div>
                     <enhanced:img src={image.src}
                                   alt={image.alt}

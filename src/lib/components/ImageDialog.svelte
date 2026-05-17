@@ -2,7 +2,7 @@
     import {
         Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger
     } from "$ui/dialog";
-    import { Button } from "$ui/button";
+    import { Button, buttonVariants } from "$ui/button";
 
     let {open = $bindable(), image} = $props();
 </script>
@@ -17,8 +17,10 @@
 
         <enhanced:img src={image.src} alt={image.alt} class="rounded"/>
 
-        <DialogFooter>
-            <Button href={image.src} target="_blank">View full image</Button>
+        <DialogFooter class="justify-self-end">
+            <a href={image.src}
+               target="_blank"
+               class="w-fit {buttonVariants()}">View full image</a>
         </DialogFooter>
     </DialogContent>
 </Dialog>

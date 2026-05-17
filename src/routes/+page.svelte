@@ -1,13 +1,11 @@
 <script lang="ts">
-    import { Button } from "$ui/button";
+    import { Button, buttonVariants } from "$ui/button";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import ContactDialog from "$lib/components/ContactDialog.svelte";
-    import LandingBg from "../lib/components/LandingBG.svelte";
-    import ImageDialog from "$lib/components/ImageDialog.svelte";
+    import LandingBg from "$lib/components/LandingBG.svelte";
 
     let contactDialogOpen = $state(false);
-    let imageDialogOpen = $state(true);
 </script>
 
 
@@ -119,31 +117,21 @@
             </p>
         </div>
 
-        <div class="space-y-1 *:font-light *:block">
+        <div class="space-y-1 *:font-light flex flex-col items-end">
             <Button variant="ghost"
-                    class=""
                     size="sm"
                     onclick={() => contactDialogOpen = true}>Contact
             </Button>
 
-            <Button variant="ghost"
-                    class=""
-                    size="sm"
-                    href="https://rynstew.art/resume"
-                    target="_blank">
-                Résumé
-            </Button>
+            <a href="https://rynstew.art/resume"
+               target="_blank"
+               class="{buttonVariants({variant: 'ghost', size: 'sm'})}">Résumé</a>
+
+            <a href="https://rynstew.art/portfolio"
+               target="_blank"
+               class="{buttonVariants({variant: 'ghost', size: 'sm'})}">Portfolio</a>
 
             <Button variant="ghost"
-                    class=""
-                    size="sm"
-                    href="https://rynstew.art/portfolio"
-                    target="_blank">
-                Portfolio
-            </Button>
-
-            <Button variant="ghost"
-                    class=""
                     size="sm"
                     onclick={() => document.body.scrollIntoView({block: "start"})}>Back to top
             </Button>
