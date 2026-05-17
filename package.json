@@ -42,9 +42,12 @@
 		"@fontsource-variable/roboto": "^5.2.10",
 		"@fontsource-variable/source-sans-3": "^5.2.9",
 		"@fontsource-variable/space-grotesk": "^5.2.10",
+		"@pixi/particle-emitter": "^5.0.10",
 		"@sveltejs/enhanced-img": "^0.10.4",
 		"@validex/core": "^1.0.3",
 		"embla-carousel-autoplay": "^8.6.0",
+		"pixi.js": "^8.18.1",
+		"svelte-pixi": "^8.0.1",
 		"svelte-sonner": "^1.1.1",
 		"validator": "^13.15.35",
 		"zod": "^4.4.3"

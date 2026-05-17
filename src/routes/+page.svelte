@@ -4,16 +4,17 @@
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import Footer from "$lib/components/Footer.svelte";
     import ContactDialog from "$lib/components/ContactDialog.svelte";
+    import ParticleBG from "$lib/components/ParticleBG.svelte";
 
     let contactDialogOpen = $state(false);
 </script>
 
 
+<ParticleBG/>
 <ContactDialog bind:open={contactDialogOpen}/>
 
 
-<section id="landing"
-         class="w-full h-screen flex justify-center items-center backdrop-brightness-85 backdrop-contrast-110">
+<section id="landing" class="w-full h-screen flex justify-center items-center">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4">Your place for web development and graphic design.</p>
