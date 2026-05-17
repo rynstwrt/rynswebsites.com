@@ -1,6 +1,6 @@
 <script lang="ts">
     import './layout.css';
-    import BreakpointVision from "$lib/util/BreakpointVision.svelte";
+    import BreakpointVision from "$lib/components/BreakpointVision.svelte";
 
     let {children} = $props();
 </script>

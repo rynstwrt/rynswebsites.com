@@ -24,7 +24,7 @@
 </script>
 
 
-<Card class="w-full max-w-md {classes}">
+<Card class="w-full max-w-md shadow-lg {classes}">
     <CardHeader>
         {#if badgeText}
             <Badge variant="secondary"
@@ -54,6 +54,6 @@
     </CardContent>
 
     <CardFooter>
-        <Button class="w-full" size="lg" onclick={() => onClick()}>Purchase</Button>
+        <Button class="w-full" size="lg" onclick={() => onClick()}>Contact</Button>
     </CardFooter>
 </Card>

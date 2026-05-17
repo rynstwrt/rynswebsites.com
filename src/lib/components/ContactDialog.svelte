@@ -1,10 +1,12 @@
 <script lang="ts" module>
     import { z } from "zod";
 
+    import validator from "validator";
+
     const contactFormSchema = z.object({
         name: z.string().min(2).max(50),
         email: z.email().min(5).max(50),
-        phone: z.number().min(9).max(20),
+        phone: z.string().refine(validator.isMobilePhone),
         message: z.string().min(10).max(100)
     });
 </script>
@@ -19,8 +21,7 @@
     import * as Form from "$ui/form";
     import { Input } from "$ui/input";
     import { Textarea } from "$ui/textarea";
-    // import * as Dialog from "$ui/dialog";
-    import { onMount } from "svelte";
+    import { toast } from "svelte-sonner"
 
     let {open = $bindable()} = $props();
 
@@ -29,9 +30,9 @@
         SPA: true,
         onUpdate: ({form: f}) => {
             if (f.valid) {
-
+                toast.success(`You submitted ${JSON.stringify(f.data, null, 2)}`);
             } else {
-
+                toast.error("Please fix the errors in the form.");
             }
         }
     });
@@ -45,18 +46,62 @@
 
     <DialogContent>
         <DialogHeader>
-            <DialogTitle>Contact</DialogTitle>
-            <DialogDescription>Reach out to inquire about or purchase services</DialogDescription>
+            <DialogTitle class="text-3xl">Contact</DialogTitle>
+            <DialogDescription class="">Reach out to inquire about or purchase services</DialogDescription>
         </DialogHeader>
 
-        <form use:enhance>
+        <form method="POST" class="w-full grid grid-cols-1 sm:grid-cols-2 gap-1.5" use:enhance>
+            <Form.Field {form} name="name" class="col-span-full">
+                <Form.Control>
+                    {#snippet children({props})}
+                        <Form.Label>Name</Form.Label>
+                        <Input {...props}
+                               bind:value={$formData.name}
+                               aria-label="Name"
+                               placeholder="John Doe"/>
+                    {/snippet}
+                </Form.Control>
+                <Form.Description/>
+                <Form.FieldErrors/>
+            </Form.Field>
+
             <Form.Field {form} name="email">
                 <Form.Control>
                     {#snippet children({props})}
                         <Form.Label>Email</Form.Label>
                         <Input {...props}
                                bind:value={$formData.email}
-                               aria-label="Email"/>
+                               aria-label="Email"
+                               placeholder="john.doe@example.com"/>
+                    {/snippet}
+                </Form.Control>
+                <Form.Description/>
+                <Form.FieldErrors/>
+            </Form.Field>
+
+            <Form.Field {form} name="phone">
+                <Form.Control>
+                    {#snippet children({props})}
+                        <Form.Label>Phone</Form.Label>
+                        <Input {...props}
+                               bind:value={$formData.phone}
+                               aria-label="Phone"
+                               placeholder="123-456-7890"/>
+                    {/snippet}
+                </Form.Control>
+                <Form.Description/>
+                <Form.FieldErrors/>
+            </Form.Field>
+
+            <Form.Field {form} name="message" class="col-span-full">
+                <Form.Control>
+                    {#snippet children({props})}
+                        <Form.Label>Message</Form.Label>
+                        <Textarea {...props}
+                                  bind:value={$formData.message}
+                                  aria-label="Message"
+                                  class="min-h-30"
+                        placeholder="Type your message here."/>
                     {/snippet}
                 </Form.Control>
                 <Form.Description/>

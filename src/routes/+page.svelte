@@ -27,7 +27,7 @@
 
 
 <section id="price-section" class="max-w-7xl mx-auto">
-    <div class="grid justify-items-center place-self-center gap-3 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid justify-items-center place-self-center gap-4 md:grid-cols-2 lg:grid-cols-3">
         <PriceCard title="Single Page Website"
                    price="$80"
                    description="A fully customized single-page website"
