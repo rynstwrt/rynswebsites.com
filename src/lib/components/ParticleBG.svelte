@@ -13,25 +13,28 @@
         direction: { x: number, y: number };
         color: string;
         size: number;
+        opacity: number;
 
         constructor(position = {x: 0, y: 0},
                     speed = 1,
                     direction = {x: 1, y: 0.9},
                     color = "#fff000",
-                    size = 10) {
+                    size = 10,
+                    opacity = 1) {
             this.position = position;
             this.speed = speed;
             this.direction = direction;
             this.color = color;
             this.size = size;
+            this.opacity = opacity;
         }
 
         update() {
-            if (this.position.x <= 0 || this.position.x >= innerWidth) {
+            if (this.position.x <= 0 || this.position.x + this.size >= innerWidth) {
                 this.direction.x *= -1;
             }
 
-            if (this.position.y <= 0 || this.position.y >= innerHeight)
+            if (this.position.y <= 0 || this.position.y + this.size >= innerHeight)
                 this.direction.y *= -1;
 
             this.position.x += this.direction.x * this.speed;
@@ -39,15 +42,11 @@
         }
 
         draw() {
-            ctx!.fillStyle = "#d06544";
-            // ctx!.strokeStyle = "rgba(255, 0, 0)";
+            ctx!.fillStyle = `rgba(208, 101, 68, ${this.opacity})`;
 
             ctx?.beginPath();
-
             ctx?.moveTo(this.position.x, this.position.y)
-
             ctx?.rect(this.position.x, this.position.y, this.size, this.size);
-
             // ctx?.lineTo(this.position.x, this.position.y);
             ctx?.closePath();
             ctx?.fill();
@@ -59,9 +58,12 @@
 
     let particles: Particle[] = [];
 
-    onMount(() => {
+
+    function initParticles() {
         for (let i = 0; i < numParticles; ++i) {
             const particle = new Particle();
+
+            particle.size = Math.random() * (20 - 3) + 3;
 
             particle.position.x = Math.random() * innerWidth;
             particle.position.y = Math.random() * innerHeight;
@@ -69,8 +71,15 @@
             particle.direction.x = Math.random() * 2 - 1;
             particle.direction.y = Math.random() * 2 - 1;
 
+            particle.opacity = Math.random();
+
             particles.push(particle);
         }
+    }
+
+
+    onMount(() => {
+        initParticles();
 
         function animate() {
             requestAnimationFrame(animate);
@@ -95,5 +104,5 @@
 <canvas bind:this={canvas}
         width={innerWidth}
         height={innerHeight}
-        class="absolute top-0 left-0 bottom-0 right-0 w-screen h-screen -z-1 opacity-30">
+        class="absolute top-0 left-0 bottom-0 right-0 w-screen h-screen -z-1 opacity-40">
 </canvas>
