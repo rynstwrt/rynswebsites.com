@@ -55,7 +55,7 @@
 
 
 <Dialog bind:open>
-    <DialogTrigger></DialogTrigger>
+    <!--<DialogTrigger></DialogTrigger>-->
 
     <DialogContent>
         <DialogHeader>

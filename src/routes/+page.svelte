@@ -13,8 +13,9 @@
 
 <ContactDialog bind:open={contactDialogOpen}/>
 
+<div id="landing-img" class="absolute top-0 left-0 w-screen h-screen -z-2 opacity-5"></div>
 
-<section id="landing" class="w-full h-screen flex justify-center items-center">
+<section id="landing" class="h-full flex justify-center items-center backdrop-blur-xs backdrop-contrast-105 backdrop-brightness-80">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4">Your place for web development and graphic design.</p>
@@ -144,6 +145,14 @@
 
 <style>
     @reference "tailwindcss";
+
+    #landing-img {
+        background-image: url("$lib/assets/img/city.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 
     section:not(#landing) {
         @apply p-6;

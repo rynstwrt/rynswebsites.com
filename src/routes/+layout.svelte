@@ -1,7 +1,6 @@
 <script lang="ts">
     import './layout.css';
-    import BreakpointVision from "$lib/components/BreakpointVision.svelte";
-    import { Button } from "$ui/button";
+    // import BreakpointVision from "$lib/components/BreakpointVision.svelte";
 
     let {children} = $props();
 </script>
@@ -19,6 +18,6 @@
 </svelte:head>
 
 
-<BreakpointVision enabled={false}/>
+<!--<BreakpointVision enabled={false}/>-->
 
 {@render children()}
