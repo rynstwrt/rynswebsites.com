@@ -54,6 +54,11 @@
     </CardContent>
 
     <CardFooter>
-        <Button class="w-full" size="lg" onclick={() => onClick()}>Purchase</Button>
+        <Button class="w-full"
+                size="lg"
+                onclick={() => {
+                    // onClick();
+                    document.querySelector("#contact-section")?.scrollIntoView()
+                }}>Purchase</Button>
     </CardFooter>
 </Card>

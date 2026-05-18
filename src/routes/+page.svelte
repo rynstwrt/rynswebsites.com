@@ -2,10 +2,7 @@
     import { Button, buttonVariants } from "$ui/button";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
-    // import ContactDialog from "$lib/components/ContactDialog.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
-    import ContactForm from "$lib/components/ContactForm.svelte";
-    // import * as Sheet from "$ui/sheet";
     import {
         Sheet,
         SheetClose,
@@ -16,7 +13,9 @@
         SheetTitle,
         SheetTrigger
     } from "$ui/sheet";
-    // import { SheetTrigger } from "$ui/sheet/index.ts";
+    import { Badge } from "$ui/badge";
+    import AlertCircleIcon from "@lucide/svelte/icons/alert-circle";
+    // import * as Alert from "$ui/alert";
 
     let contactDialogOpen = $state(false);
 </script>
@@ -138,10 +137,25 @@
 
 
 <section id="contact-section" class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-medium">Contact</h2>
+    <h2 class="text-3xl font-medium flex items-center">
+        Contact
+        <Badge class="ms-2 bg-yellow-200 text-yellow-800">Under Construction</Badge>
+    </h2>
     <p class="text-lg text-gray-500">Purchase a service or ask any question.</p>
 
-    <ContactForm/>
+    <!--<Alert.Root class="bg-yellow-200 text-yellow-900 my-2">-->
+    <!--    <AlertCircleIcon/>-->
+    <!--    <Alert.Title>-->
+    <!--        This section is under construction.-->
+    <!--    </Alert.Title>-->
+    <!--</Alert.Root>-->
+
+    <p class="font-light mt-2">
+        This section is under construction.
+        <br>
+        Contact me at
+        <span class="underline font-normal">rynswebsites@gmail.com</span>
+    </p>
 </section>
 
 
