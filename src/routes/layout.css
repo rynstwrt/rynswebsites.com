@@ -147,6 +147,7 @@
     --background: oklch(0.2598 0.0306 262.6666);
     --background-2: oklch(0.245 0.026 268.15);
     --background-3: oklch(0.231 0.023 265.624);
+    /*--background-3: oklch(0.231 0.02 267.781);*/
     --foreground: oklch(0.9219 0 0);
     --card: oklch(0.3106 0.0301 268.6365);
     --card-foreground: oklch(0.9219 0 0);

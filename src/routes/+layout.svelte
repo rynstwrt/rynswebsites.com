@@ -59,7 +59,7 @@
     @reference "./layout.css";
 
     footer {
-        @apply bg-background-2;
+        @apply bg-background-3;
 
         /*&::before {*/
         /*    content: "";*/
