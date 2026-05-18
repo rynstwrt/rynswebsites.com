@@ -138,7 +138,7 @@
                 <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
                     <Field.Field class="gap-1 col-span-full sm:col-span-1">
                         <Field.Label class="flex items-center">
-                            <UserIcon size={14}/>
+                            <UserIcon size={13}/>
                             Name
                         </Field.Label>
                         <Input name="name"
@@ -148,7 +148,7 @@
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
                         <Field.Label class="flex items-center">
-                            <MailIcon size={14}/>
+                            <MailIcon size={13}/>
                             Email
                         </Field.Label>
                         <Input name="email"
@@ -158,7 +158,7 @@
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
                         <Field.Label class="flex items-center">
-                            <PhoneIcon size={14}/>
+                            <PhoneIcon size={13}/>
                             Phone
                         </Field.Label>
                         <Input name="phone"
@@ -168,7 +168,7 @@
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
                         <Field.Label class="flex items-center">
-                            <BlocksIcon size={14}/>
+                            <BlocksIcon size={13}/>
                             Services
                         </Field.Label>
                         <Select type="multiple" name="services" bind:value={serviceSelectValue}>
@@ -183,7 +183,7 @@
 
                     <Field.Field class="gap-1 sm:col-span-2 sm:col-start-2 sm:row-span-4 sm:row-start-1">
                         <Field.Label class="flex items-center">
-                            <MessageSquareIcon size={14}/>
+                            <MessageSquareIcon size={13}/>
                             Message
                         </Field.Label>
                         <Textarea name="message"
