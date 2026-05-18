@@ -1,6 +1,7 @@
 <script lang="ts">
     import './layout.css';
     // import BreakpointVision from "$lib/components/BreakpointVision.svelte";
+    import { Button, buttonVariants } from "$ui/button";
 
     let {children} = $props();
 </script>
@@ -15,9 +16,43 @@
     <meta property="og:image" content="https://rynswebsites.com/preview.png"/>
     <meta name="twitter:image" content="https://rynswebsites.com/preview.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
+    <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
 </svelte:head>
 
 
 <!--<BreakpointVision enabled={false}/>-->
 
 {@render children()}
+
+<footer class="backdrop-brightness-80">
+    <div class="p-10 flex justify-between gap-6 mt-6">
+        <div class="max-w-xs">
+            <h2 class="text-2xl font-medium">Ryn's Websites</h2>
+            <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
+            <p class="text-xs font-light text-neutral-300 mt-6">
+                © {new Date().getFullYear()} All Rights Reserved.
+            </p>
+        </div>
+
+        <div class="space-y-1 *:font-light flex flex-col items-end">
+            <Button variant="ghost"
+                    size="sm"
+                    onclick={() => document.querySelector("#contact-section")?.scrollIntoView({block: "start"})}>
+                Contact
+            </Button>
+
+            <a href="https://rynstew.art/resume"
+               target="_blank"
+               class="{buttonVariants({variant: 'ghost', size: 'sm'})}">Résumé</a>
+
+            <a href="https://rynstew.art/portfolio"
+               target="_blank"
+               class="{buttonVariants({variant: 'ghost', size: 'sm'})}">Portfolio</a>
+
+            <Button variant="ghost"
+                    size="sm"
+                    onclick={() => document.body.scrollIntoView({block: "start"})}>Back to top
+            </Button>
+        </div>
+    </div>
+</footer>

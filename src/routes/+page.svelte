@@ -2,8 +2,21 @@
     import { Button, buttonVariants } from "$ui/button";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
-    import ContactDialog from "$lib/components/ContactDialog.svelte";
+    // import ContactDialog from "$lib/components/ContactDialog.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
+    import ContactForm from "$lib/components/ContactForm.svelte";
+    // import * as Sheet from "$ui/sheet";
+    import {
+        Sheet,
+        SheetClose,
+        SheetContent,
+        SheetDescription,
+        SheetFooter,
+        SheetHeader,
+        SheetTitle,
+        SheetTrigger
+    } from "$ui/sheet";
+    // import { SheetTrigger } from "$ui/sheet/index.ts";
 
     let contactDialogOpen = $state(false);
 </script>
@@ -12,7 +25,24 @@
 <LandingBg/>
 
 
-<ContactDialog bind:open={contactDialogOpen}/>
+<!--<ContactDialog bind:open={contactDialogOpen}/>-->
+<Sheet bind:open={contactDialogOpen}>
+    <!--<SheetTrigger></SheetTrigger>-->
+    <SheetContent>
+        <SheetHeader>
+            <SheetTitle>Contact</SheetTitle>
+            <SheetDescription>Order a service or ask any question.</SheetDescription>
+        </SheetHeader>
+
+        <form>
+            <p>asdf</p>
+        </form>
+
+        <SheetFooter>
+            <Button type="submit">Submit</Button>
+        </SheetFooter>
+    </SheetContent>
+</Sheet>
 
 
 <section id="landing"
@@ -107,37 +137,12 @@
 </section>
 
 
-<footer class="backdrop-brightness-80">
-    <div class="p-10 flex justify-between gap-6 mt-6">
-        <div class="max-w-xs">
-            <h2 class="text-2xl font-medium">Ryn's Websites</h2>
-            <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
-            <p class="text-xs font-light text-neutral-300 mt-6">
-                © {new Date().getFullYear()} All Rights Reserved.
-            </p>
-        </div>
+<section id="contact-section" class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-medium">Contact</h2>
+    <p class="text-lg text-gray-500">Purchase a service or ask any question.</p>
 
-        <div class="space-y-1 *:font-light flex flex-col items-end">
-            <Button variant="ghost"
-                    size="sm"
-                    onclick={() => contactDialogOpen = true}>Contact
-            </Button>
-
-            <a href="https://rynstew.art/resume"
-               target="_blank"
-               class="{buttonVariants({variant: 'ghost', size: 'sm'})}">Résumé</a>
-
-            <a href="https://rynstew.art/portfolio"
-               target="_blank"
-               class="{buttonVariants({variant: 'ghost', size: 'sm'})}">Portfolio</a>
-
-            <Button variant="ghost"
-                    size="sm"
-                    onclick={() => document.body.scrollIntoView({block: "start"})}>Back to top
-            </Button>
-        </div>
-    </div>
-</footer>
+    <ContactForm/>
+</section>
 
 
 <style>

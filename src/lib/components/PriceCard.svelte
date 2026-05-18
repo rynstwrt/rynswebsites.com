@@ -54,6 +54,6 @@
     </CardContent>
 
     <CardFooter>
-        <Button class="w-full" size="lg" onclick={() => onClick()}>Contact</Button>
+        <Button class="w-full" size="lg" onclick={() => onClick()}>Purchase</Button>
     </CardFooter>
 </Card>
