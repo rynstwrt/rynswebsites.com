@@ -1,15 +1,14 @@
 <script lang="ts">
-    import { Button, buttonVariants } from "$ui/button";
+    import { Button } from "$ui/button";
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
     import { Badge } from "$ui/badge";
-    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "$ui/card";
+    import { Card, CardContent, CardFooter } from "$ui/card";
     import * as Field from "$ui/field";
     import { Input } from "$ui/input";
     import { Textarea } from "$ui/textarea";
     import { Select, SelectContent, SelectItem, SelectTrigger } from "$ui/select";
-    // import { Toggle } from "$ui/toggle";
 
     let contactDialogOpen = $state(false);
 
@@ -18,42 +17,12 @@
         {value: "multi-page-website", label: "Multi Page Website"},
         {value: "brand-logo", label: "Brand Logo"},
     ];
-
     let serviceSelectValue = $state([]);
-    // let serviceSelectTriggerText = $derived(services.find(s => s.value === serviceSelectValue)?.label ?? "Select a servic");
-
-
-    let serviceSelectTriggerText = $derived(
-        // serviceSelectValue.length ? `${serviceSelectValue.length}`
-        serviceSelectValue.length + " selected"
-
-
-        // serviceSelectValue.map(sval => services.find(s => s.value === sval)?.label).join(",")
-    );
+    let serviceSelectTriggerText = $derived(serviceSelectValue.length + " selected");
 </script>
 
 
 <LandingBg/>
-
-
-<!--<ContactDialog bind:open={contactDialogOpen}/>-->
-<!--<Sheet bind:open={contactDialogOpen}>-->
-<!--    &lt;!&ndash;<SheetTrigger></SheetTrigger>&ndash;&gt;-->
-<!--    <SheetContent>-->
-<!--        <SheetHeader>-->
-<!--            <SheetTitle>Contact</SheetTitle>-->
-<!--            <SheetDescription>Order a service or ask any question.</SheetDescription>-->
-<!--        </SheetHeader>-->
-
-<!--        <form>-->
-<!--            <p>asdf</p>-->
-<!--        </form>-->
-
-<!--        <SheetFooter>-->
-<!--            <Button type="submit">Submit</Button>-->
-<!--        </SheetFooter>-->
-<!--    </SheetContent>-->
-<!--</Sheet>-->
 
 
 <section id="landing"
@@ -156,18 +125,16 @@
 
     <p class="text-lg text-gray-500">Purchase a service or ask any question.</p>
 
-    <Card class="shadow-lg transition-shadow mt-4 max-w-2xl">
+    <Card class="shadow-lg transition-shadow my-8 w-full max-w-2xl place-self-center">
         <CardContent>
-            <form method="POST" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
-                <!--<form method="POST" class="grid gap-3 sm:grid-cols-3">-->
-                <!--<form method="POST" class="grid gap-3 sm:grid-cols-3 mt-4 max-w-xl place-self-center">-->
-                <Field.Field class="gap-1 col-span-full">
+            <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
+                <Field.Field class="gap-1 col-span-full sm:col-span-1">
                     <Field.Label>Name</Field.Label>
                     <Input placeholder="John Doe"
                            aria-label="name"/>
                 </Field.Field>
 
-                <Field.Field class="gap-1 col-span-full sm:col-span-1">
+                <Field.Field class="gap-1 col-span-full sm:col-1">
                     <Field.Label>Email</Field.Label>
                     <Input placeholder="john@example.com"
                            aria-label="email"/>
@@ -181,51 +148,36 @@
 
                 <Field.Field class="gap-1 col-span-full sm:col-1">
                     <Field.Label>Services</Field.Label>
-                    <!--<span class="flex items-center">-->
-                    <!--    <Checkbox id="single-page-site-service"  class="me-1" />-->
-                    <!--    <Label for="single-page-site-service">Single Page Website</Label>-->
-                    <!--</span>-->
-
                     <Select type="multiple" name="serviceSelect" bind:value={serviceSelectValue}>
                         <SelectTrigger>{serviceSelectTriggerText}</SelectTrigger>
                         <SelectContent>
-                            <!--<SelectItem value="asdf" label="one"></SelectItem>-->
                             {#each services as service}
                                 <SelectItem value={service.value} label={service.label}/>
                             {/each}
                         </SelectContent>
                     </Select>
-
-                    <!--<Toggle size="sm"-->
-                    <!--        variant="outline"-->
-                    <!--        class="data-[state=on]:bg-primary"-->
-                    <!--        aria-label="Toggle single page website service">-->
-                    <!--    Single Page Website-->
-                    <!--</Toggle>-->
                 </Field.Field>
 
-                <Field.Field class="gap-1 sm:col-1">
+                <Field.Field class="gap-1 sm:col-span-2 sm:col-start-2 sm:row-span-4 sm:row-start-1">
                     <Field.Label>Message</Field.Label>
                     <Textarea placeholder="Type your message here."
                               aria-label="message"
-                              class="h-40"/>
+                              class="h-full min-h-40"/>
                 </Field.Field>
 
-                <!--<Button type="submit"-->
-                <!--        size="lg"-->
-                <!--        class="col-span-full sm:col-span-1 sm:-col-end-1">-->
-                <!--    Submit-->
-                <!--</Button>-->
+                <Field.Field class="col-span-full mt-3">
+                    <Button type="submit" size="lg">Submit</Button>
+                </Field.Field>
             </form>
         </CardContent>
 
-        <CardFooter>
-            <Button type="submit"
-                    size="lg"
-                    class="w-full">
-                Submit
-            </Button>
-        </CardFooter>
+        <!--<CardFooter>-->
+        <!--    <Button type="submit"-->
+        <!--            size="lg"-->
+        <!--            class="w-1/3">-->
+        <!--        Submit-->
+        <!--    </Button>-->
+        <!--</CardFooter>-->
     </Card>
 </section>
 
