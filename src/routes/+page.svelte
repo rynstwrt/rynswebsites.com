@@ -125,30 +125,35 @@
 
     <p class="text-lg text-gray-500">Purchase a service or ask any question.</p>
 
+    <p class="text-base font-normal text-primary">rynswebsites@gmail.com</p>
+
     <Card class="shadow-lg transition-shadow my-8 w-full max-w-2xl place-self-center">
         <CardContent>
             <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
                 <Field.Field class="gap-1 col-span-full sm:col-span-1">
                     <Field.Label>Name</Field.Label>
-                    <Input placeholder="John Doe"
+                    <Input name="name"
+                           placeholder="John Doe"
                            aria-label="name"/>
                 </Field.Field>
 
                 <Field.Field class="gap-1 col-span-full sm:col-1">
                     <Field.Label>Email</Field.Label>
-                    <Input placeholder="john@example.com"
+                    <Input name="email"
+                           placeholder="john@example.com"
                            aria-label="email"/>
                 </Field.Field>
 
                 <Field.Field class="gap-1 col-span-full sm:col-1">
                     <Field.Label>Phone</Field.Label>
-                    <Input placeholder="123-456-7890"
+                    <Input name="phone"
+                           placeholder="123-456-7890"
                            aria-label="phone"/>
                 </Field.Field>
 
                 <Field.Field class="gap-1 col-span-full sm:col-1">
                     <Field.Label>Services</Field.Label>
-                    <Select type="multiple" name="serviceSelect" bind:value={serviceSelectValue}>
+                    <Select type="multiple" name="services" bind:value={serviceSelectValue}>
                         <SelectTrigger>{serviceSelectTriggerText}</SelectTrigger>
                         <SelectContent>
                             {#each services as service}
@@ -160,7 +165,8 @@
 
                 <Field.Field class="gap-1 sm:col-span-2 sm:col-start-2 sm:row-span-4 sm:row-start-1">
                     <Field.Label>Message</Field.Label>
-                    <Textarea placeholder="Type your message here."
+                    <Textarea name="message"
+                              placeholder="Type your message here."
                               aria-label="message"
                               class="h-full min-h-40"/>
                 </Field.Field>
@@ -170,14 +176,6 @@
                 </Field.Field>
             </form>
         </CardContent>
-
-        <!--<CardFooter>-->
-        <!--    <Button type="submit"-->
-        <!--            size="lg"-->
-        <!--            class="w-1/3">-->
-        <!--        Submit-->
-        <!--    </Button>-->
-        <!--</CardFooter>-->
     </Card>
 </section>
 

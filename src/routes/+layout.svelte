@@ -22,7 +22,7 @@
 {@render children()}
 
 <footer class="backdrop-brightness-80">
-    <div class="p-10 flex justify-between gap-6 mt-6">
+    <div class="p-10 flex justify-between gap-6">
         <div class="max-w-xs">
             <h2 class="text-2xl font-medium">Ryn's Websites</h2>
             <p class="text-neutral-400 mt-3">Your place for web development and graphic design.</p>
@@ -34,7 +34,7 @@
         <div class="space-y-1 *:font-light flex flex-col items-end">
             <Button variant="ghost"
                     size="sm"
-                    onclick={() => document.querySelector("#contact-section")?.scrollIntoView({block: "start"})}>
+                    onclick={() => document.querySelector("#contact-section")?.scrollIntoView({block: "end"})}>
                 Contact
             </Button>
 
