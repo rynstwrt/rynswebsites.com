@@ -53,3 +53,35 @@
         </div>
     </div>
 </footer>
+
+
+<style>
+    @reference "./layout.css";
+
+    footer {
+        @apply bg-background-2;
+
+        /*&::before {*/
+        /*    content: "";*/
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    right: 0;*/
+        /*    bottom: 0;*/
+        /*    left: 0;*/
+        /*    background-color: var(--background);*/
+        /*    z-index: -2;*/
+        /*}*/
+
+        /*&::after {*/
+        /*    content: "";*/
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    right: 0;*/
+        /*    bottom: 0;*/
+        /*    left: 0;*/
+        /*    background-color: black;*/
+        /*    z-index: -1;*/
+        /*    opacity: 0.2;*/
+        /*}*/
+    }
+</style>
