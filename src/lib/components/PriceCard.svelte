@@ -23,7 +23,7 @@
 </script>
 
 
-<Card class="w-full max-w-md shadow-lg {classes}">
+<Card class="w-full max-w-md shadow-xl {classes}">
     <CardHeader>
         {#if badgeText}
             <Badge variant="secondary"

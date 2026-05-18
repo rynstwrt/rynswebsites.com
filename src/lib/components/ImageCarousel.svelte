@@ -43,7 +43,7 @@
             })
         ]}
         setApi={emblaApi => api = emblaApi}>
-    <Carousel.Content class="items-center">
+    <Carousel.Content class="">
         {#each images as image}
             <Carousel.Item class="md:basis-1/2 lg:basis-1/3"
                            onclick={(event) => {
@@ -51,11 +51,10 @@
                                clickedImage = {src: target?.src, alt: target?.alt}
                                imageDialogOpen = true
                            }}>
-                <div>
-                    <enhanced:img src={image.src}
-                                  alt={image.alt}
-                                  class="w-full min-w-full shadow-xl rounded"/>
-                </div>
+                <enhanced:img src={image.src}
+                              alt={image.alt}
+                              class="block border border-border/50 rounded-xl"/>
+                <!--</div>-->
             </Carousel.Item>
         {/each}
     </Carousel.Content>
