@@ -9,11 +9,12 @@
     import { Input } from "$ui/input";
     import { Textarea } from "$ui/textarea";
     import { Select, SelectContent, SelectItem, SelectTrigger } from "$ui/select";
-    import MailIcon from "@lucide/svelte/icons/mail";
-    import UserIcon from "@lucide/svelte/icons/user";
-    import PhoneIcon from "@lucide/svelte/icons/phone";
-    import BlocksIcon from "@lucide/svelte/icons/blocks";
-    import MessageSquareIcon from "@lucide/svelte/icons/message-square";
+    import { Mail, User, Phone, Blocks, MessageSquareText } from "svelte-lucide";
+    // import MailIcon from "@lucide/svelte/icons/mail";
+    // import UserIcon from "@lucide/svelte/icons/user";
+    // import PhoneIcon from "@lucide/svelte/icons/phone";
+    // import BlocksIcon from "@lucide/svelte/icons/blocks";
+    // import MessageSquareIcon from "@lucide/svelte/icons/message-square";
 
     const services = [
         {value: "single-page-website", label: "Single Page Website"},
@@ -28,8 +29,7 @@
 <LandingBg/>
 
 
-<section id="landing"
-         class="h-full flex justify-center items-center ">
+<section id="landing" class="h-full flex justify-center items-center ">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4 text-gray-400">Your place for web development and graphic design.</p>
@@ -138,7 +138,7 @@
                 <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
                     <Field.Field class="gap-1 col-span-full sm:col-span-1">
                         <Field.Label class="flex items-center">
-                            <UserIcon size={13}/>
+                            <User size="13"/>
                             Name
                         </Field.Label>
                         <Input name="name"
@@ -148,7 +148,7 @@
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
                         <Field.Label class="flex items-center">
-                            <MailIcon size={13}/>
+                            <Mail size="13"/>
                             Email
                         </Field.Label>
                         <Input name="email"
@@ -158,7 +158,7 @@
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
                         <Field.Label class="flex items-center">
-                            <PhoneIcon size={13}/>
+                            <Phone size="13"/>
                             Phone
                         </Field.Label>
                         <Input name="phone"
@@ -168,7 +168,7 @@
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
                         <Field.Label class="flex items-center">
-                            <BlocksIcon size={13}/>
+                            <Blocks size="13"/>
                             Services
                         </Field.Label>
                         <Select type="multiple" name="services" bind:value={serviceSelectValue}>
@@ -183,7 +183,7 @@
 
                     <Field.Field class="gap-1 sm:col-span-2 sm:col-start-2 sm:row-span-4 sm:row-start-1">
                         <Field.Label class="flex items-center">
-                            <MessageSquareIcon size={13}/>
+                            <MessageSquareText size="13"/>
                             Message
                         </Field.Label>
                         <Textarea name="message"

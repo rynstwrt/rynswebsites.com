@@ -44,6 +44,9 @@ importers:
       resend:
         specifier: ^6.12.3
         version: 6.12.3
+      svelte-lucide:
+        specifier: ^3.0.1
+        version: 3.0.1(svelte@5.55.5)
       svelte-sonner:
         specifier: ^1.1.1
         version: 1.1.1(svelte@5.55.5)
@@ -1407,6 +1410,11 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
+  svelte-lucide@3.0.1:
+    resolution: {integrity: sha512-0ZZ2pMEXXxMzttnNYBmaKTeTtRL57461oOUbTkQKxkFbR3qOeMaEg7Cp0w9vB4j+h+/L/Jihflo0rUx4hiZ+Cg==}
+    peerDependencies:
+      svelte: ^5.0.0
+
   svelte-parse-markup@0.1.5:
     resolution: {integrity: sha512-T6mqZrySltPCDwfKXWQ6zehipVLk4GWfH1zCMGgRtLlOIFPuw58ZxVYxVvotMJgJaurKi1i14viB2GIRKXeJTQ==}
     peerDependencies:
@@ -2738,6 +2746,10 @@ snapshots:
       typescript: 6.0.3
     transitivePeerDependencies:
       - picomatch
+
+  svelte-lucide@3.0.1(svelte@5.55.5):
+    dependencies:
+      svelte: 5.55.5
 
   svelte-parse-markup@0.1.5(svelte@5.55.5):
     dependencies:
