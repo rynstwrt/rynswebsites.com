@@ -19,7 +19,6 @@
         badgeText = undefined,
         badgeClasses = "",
         classes="",
-        onClick
     } = $props();
 </script>
 
@@ -57,7 +56,6 @@
         <Button class="w-full"
                 size="lg"
                 onclick={() => {
-                    // onClick();
                     document.querySelector("#contact-section")?.scrollIntoView()
                 }}>Purchase</Button>
     </CardFooter>

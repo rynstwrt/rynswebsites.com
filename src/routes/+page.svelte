@@ -4,13 +4,16 @@
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
     import { Badge } from "$ui/badge";
-    import { Card, CardContent, CardFooter } from "$ui/card";
+    import { Card, CardContent } from "$ui/card";
     import * as Field from "$ui/field";
     import { Input } from "$ui/input";
     import { Textarea } from "$ui/textarea";
     import { Select, SelectContent, SelectItem, SelectTrigger } from "$ui/select";
-
-    let contactDialogOpen = $state(false);
+    import MailIcon from "@lucide/svelte/icons/mail";
+    import UserIcon from "@lucide/svelte/icons/user";
+    import PhoneIcon from "@lucide/svelte/icons/phone";
+    import BlocksIcon from "@lucide/svelte/icons/blocks";
+    import MessageSquareIcon from "@lucide/svelte/icons/message-square";
 
     const services = [
         {value: "single-page-website", label: "Single Page Website"},
@@ -53,8 +56,7 @@
                            "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
                    ]}
                        badgeText="Most Popular"
-                       badgeClasses="bg-green-300 text-green-800"
-                       onClick={() => contactDialogOpen = true}/>
+                       badgeClasses="bg-green-300 text-green-800"/>
 
             <PriceCard title="Multiple Page Website"
                        price="$200"
@@ -65,21 +67,18 @@
                            "Up to 10 revisions included.",
                            "Each following revision is $15.",
                            "Support for any form of hosting (Wordpress, Squarespace, Static HTML, Apache, Nginx, etc.)"
-                       ]}
-                       onClick={() => contactDialogOpen = true}/>
+                       ]}/>
 
             <PriceCard title="Custom Brand Logo"
                        price="$50"
                        description="Fully customized logo for your brand or company"
                        bulletpoints={[
-                       "Participate in the design process if desired.",
-                       "Frequent progress updates",
-                       "Up to 10 revisions included.",
-                       "Each following revision is $15."
-                   ]}
-                       classes="md:max-lg:col-span-full md:max-lg:max-w-none"
-                       onClick={() => contactDialogOpen = true}/>
-
+                           "Participate in the design process if desired.",
+                           "Frequent progress updates",
+                           "Up to 10 revisions included.",
+                           "Each following revision is $15."
+                       ]}
+                       classes="md:max-lg:col-span-full md:max-lg:max-w-none"/>
         </div>
     </div>
 </section>
@@ -138,28 +137,40 @@
             <CardContent>
                 <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
                     <Field.Field class="gap-1 col-span-full sm:col-span-1">
-                        <Field.Label>Name</Field.Label>
+                        <Field.Label class="flex items-center">
+                            <UserIcon size={14}/>
+                            Name
+                        </Field.Label>
                         <Input name="name"
                                placeholder="John Doe"
                                aria-label="name"/>
                     </Field.Field>
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
-                        <Field.Label>Email</Field.Label>
+                        <Field.Label class="flex items-center">
+                            <MailIcon size={14}/>
+                            Email
+                        </Field.Label>
                         <Input name="email"
                                placeholder="john@example.com"
                                aria-label="email"/>
                     </Field.Field>
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
-                        <Field.Label>Phone</Field.Label>
+                        <Field.Label class="flex items-center">
+                            <PhoneIcon size={14}/>
+                            Phone
+                        </Field.Label>
                         <Input name="phone"
                                placeholder="123-456-7890"
                                aria-label="phone"/>
                     </Field.Field>
 
                     <Field.Field class="gap-1 col-span-full sm:col-1">
-                        <Field.Label>Services</Field.Label>
+                        <Field.Label class="flex items-center">
+                            <BlocksIcon size={14}/>
+                            Services
+                        </Field.Label>
                         <Select type="multiple" name="services" bind:value={serviceSelectValue}>
                             <SelectTrigger>{serviceSelectTriggerText}</SelectTrigger>
                             <SelectContent>
@@ -171,7 +182,10 @@
                     </Field.Field>
 
                     <Field.Field class="gap-1 sm:col-span-2 sm:col-start-2 sm:row-span-4 sm:row-start-1">
-                        <Field.Label>Message</Field.Label>
+                        <Field.Label class="flex items-center">
+                            <MessageSquareIcon size={14}/>
+                            Message
+                        </Field.Label>
                         <Textarea name="message"
                                   placeholder="Type your message here."
                                   aria-label="message"

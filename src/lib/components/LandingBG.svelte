@@ -63,26 +63,6 @@
 <svelte:window bind:innerWidth bind:innerHeight></svelte:window>
 
 
-<!--<div class="absolute top-0 left-0 right-0 bottom-0 -z-2">-->
-<!--    <div id="landing-img" class="absolute top-0 right-0 bottom-0 left-0 opacity-5"></div>-->
-
-<!--    <canvas bind:this={canvas}-->
-<!--            width={innerWidth}-->
-<!--            height={innerHeight}-->
-<!--            class="absolute top-0 right-0 bottom-0 left-0 opacity-40 overflow-hidden"-->
-<!--            onresize={() => {-->
-<!--            particles.forEach(particle => {-->
-<!--                particle.position.x = Math.random() * innerWidth;-->
-<!--                particle.position.y = Math.random() * innerHeight;-->
-<!--            });-->
-<!--        }}>-->
-<!--    </canvas>-->
-
-<!--    <div class="absolute top-0 right-0 bottom-0 left-0 backdrop-contrast-105 backdrop-brightness-80"></div>-->
-<!--    &lt;!&ndash;<div class="absolute top-0 right-0 bottom-0 left-0 z-10 bg-red-500"></div>&ndash;&gt;-->
-<!--</div>-->
-
-
 <div class="fixed top-0 left-0 right-0 bottom-0 -z-2">
     <div id="landing-img" class="absolute top-0 right-0 bottom-0 left-0 opacity-5"></div>
 
