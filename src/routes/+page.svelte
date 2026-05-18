@@ -123,7 +123,7 @@
         <Badge class="ms-2 bg-yellow-200 text-yellow-800">Under Construction</Badge>
     </h2>
 
-    <p class="text-lg text-gray-500">Purchase a service or ask any question.</p>
+    <p class="text-lg text-gray-500">Ask me any questions!<br>Use the email below instead of the form for now.</p>
 
     <p class="text-base font-normal text-primary">rynswebsites@gmail.com</p>
 
