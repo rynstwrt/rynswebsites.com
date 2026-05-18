@@ -26,7 +26,7 @@
 
 
 <section id="landing"
-         class="h-full flex justify-center items-center backdrop-contrast-105 backdrop-brightness-60">
+         class="h-full flex justify-center items-center backdrop-contrast-105 backdrop-brightness-80">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4 text-gray-400">Your place for web development and graphic design.</p>
