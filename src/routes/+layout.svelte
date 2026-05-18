@@ -16,11 +16,8 @@
     <meta property="og:image" content="https://rynswebsites.com/preview.png"/>
     <meta name="twitter:image" content="https://rynswebsites.com/preview.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <script type="text/javascript" src="https://app.mailjet.com/pas-nc-pop-in-v1.js"></script>
 </svelte:head>
 
-
-<!--<BreakpointVision enabled={false}/>-->
 
 {@render children()}
 

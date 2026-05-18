@@ -3,19 +3,23 @@
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
-    import {
-        Sheet,
-        SheetClose,
-        SheetContent,
-        SheetDescription,
-        SheetFooter,
-        SheetHeader,
-        SheetTitle,
-        SheetTrigger
-    } from "$ui/sheet";
+    // import {
+    //     Sheet,
+    //     SheetClose,
+    //     SheetContent,
+    //     SheetDescription,
+    //     SheetFooter,
+    //     SheetHeader,
+    //     SheetTitle,
+    //     SheetTrigger
+    // } from "$ui/sheet";
     import { Badge } from "$ui/badge";
-    import AlertCircleIcon from "@lucide/svelte/icons/alert-circle";
+    // import AlertCircleIcon from "@lucide/svelte/icons/alert-circle";
+    import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "$ui/card";
     // import * as Alert from "$ui/alert";
+    import * as Field from "$ui/field";
+    import { Input } from "$ui/input";
+    import { Textarea } from "$ui/textarea";
 
     let contactDialogOpen = $state(false);
 </script>
@@ -25,23 +29,23 @@
 
 
 <!--<ContactDialog bind:open={contactDialogOpen}/>-->
-<Sheet bind:open={contactDialogOpen}>
-    <!--<SheetTrigger></SheetTrigger>-->
-    <SheetContent>
-        <SheetHeader>
-            <SheetTitle>Contact</SheetTitle>
-            <SheetDescription>Order a service or ask any question.</SheetDescription>
-        </SheetHeader>
+<!--<Sheet bind:open={contactDialogOpen}>-->
+<!--    &lt;!&ndash;<SheetTrigger></SheetTrigger>&ndash;&gt;-->
+<!--    <SheetContent>-->
+<!--        <SheetHeader>-->
+<!--            <SheetTitle>Contact</SheetTitle>-->
+<!--            <SheetDescription>Order a service or ask any question.</SheetDescription>-->
+<!--        </SheetHeader>-->
 
-        <form>
-            <p>asdf</p>
-        </form>
+<!--        <form>-->
+<!--            <p>asdf</p>-->
+<!--        </form>-->
 
-        <SheetFooter>
-            <Button type="submit">Submit</Button>
-        </SheetFooter>
-    </SheetContent>
-</Sheet>
+<!--        <SheetFooter>-->
+<!--            <Button type="submit">Submit</Button>-->
+<!--        </SheetFooter>-->
+<!--    </SheetContent>-->
+<!--</Sheet>-->
 
 
 <section id="landing"
@@ -141,21 +145,55 @@
         Contact
         <Badge class="ms-2 bg-yellow-200 text-yellow-800">Under Construction</Badge>
     </h2>
+
     <p class="text-lg text-gray-500">Purchase a service or ask any question.</p>
 
-    <!--<Alert.Root class="bg-yellow-200 text-yellow-900 my-2">-->
-    <!--    <AlertCircleIcon/>-->
-    <!--    <Alert.Title>-->
-    <!--        This section is under construction.-->
-    <!--    </Alert.Title>-->
-    <!--</Alert.Root>-->
+    <Card class="w-full shadow-lg transition-shadow mt-4 max-w-2xl">
+        <!--<CardHeader>-->
+        <!--<CardTitle class="text-3xl font-bold flex justify-between">-->
+        <!--    Contact or Purchase-->
+        <!--</CardTitle>-->
 
-    <p class="font-light mt-2">
-        This section is under construction.
-        <br>
-        Contact me at
-        <span class="underline font-normal">rynswebsites@gmail.com</span>
-    </p>
+        <!--<CardDescription class="text-base">{description}</CardDescription>-->
+        <!--</CardHeader>-->
+
+        <CardContent>
+            <form method="POST" class="grid gap-x-2 gap-y-3 sm:grid-cols-2 md:grid-cols-3">
+                <Field.Field class="gap-1 col-span-full md:col-span-1">
+                    <Field.Label>Name</Field.Label>
+                    <Input placeholder="John Doe"
+                           aria-label="name"/>
+                </Field.Field>
+
+                <Field.Field class="gap-1">
+                    <Field.Label>Email</Field.Label>
+                    <Input placeholder="john@example.com"
+                           aria-label="email"/>
+                </Field.Field>
+
+                <Field.Field class="gap-1">
+                    <Field.Label>Phone</Field.Label>
+                    <Input placeholder="123-456-7890"
+                           aria-label="phone"/>
+                </Field.Field>
+
+                <Field.Field class="gap-1 col-span-full">
+                    <Field.Label>Message</Field.Label>
+                    <Textarea placeholder="Type your message here."
+                              aria-label="message"
+                              class="h-40 md:h-50"/>
+                </Field.Field>
+            </form>
+        </CardContent>
+
+        <CardFooter>
+            <Button type="submit"
+                    size="lg"
+                    class=" w-full">
+                Submit
+            </Button>
+        </CardFooter>
+    </Card>
 </section>
 
 

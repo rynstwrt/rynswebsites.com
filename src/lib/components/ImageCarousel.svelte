@@ -38,7 +38,7 @@
         }}
         plugins={[
             Autoplay({
-                delay: 3000,
+                delay: 5000,
                 stopOnInteraction: true
             })
         ]}
