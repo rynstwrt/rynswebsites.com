@@ -20,7 +20,7 @@
             stopOnInteraction: true,
             delay: 5000
         }),
-        AutoHeight(),
+        // AutoHeight(),
     ];
 
     let scrollSnaps = $state([]);
