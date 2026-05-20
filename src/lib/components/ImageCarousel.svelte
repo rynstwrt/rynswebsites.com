@@ -4,7 +4,6 @@
     import type { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
     import { ChevronRight, ChevronLeft } from "@lucide/svelte";
     import { Button } from "$ui/button";
-    import AutoScroll from "embla-carousel-auto-scroll";
     import Autoplay from "embla-carousel-autoplay";
 
     let {images, reversed = false} = $props();
@@ -22,23 +21,18 @@
             delay: 5000
         }),
         AutoHeight(),
-        // AutoScroll({
-        //     startDelay: 0,
-        //     stopOnInteraction: true,
-        //     speed: 2
-        // })
     ];
 
     let scrollSnaps = $state([]);
     let selectedSnap = $state(0);
 
     const goToPrev = () => {
-        emblaApi?.plugins().autoScroll?.stop();
+        // emblaApi?.plugins().autoScroll?.stop();
         emblaApi?.scrollPrev();
     }
 
     const goToNext = () => {
-        emblaApi?.plugins().autoScroll?.stop();
+        // emblaApi?.plugins().autoScroll?.stop();
         emblaApi?.scrollNext()
     }
 
@@ -65,7 +59,7 @@
         <div class="embla__container">
             {#each images as img}
                 <div class="embla__slide">
-                    <img src={img.src} alt={img.alt}/>
+                    <enhanced:img src={img.src} alt={img.alt}/>
                 </div>
             {/each}
         </div>
