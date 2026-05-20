@@ -43,7 +43,7 @@
 
 <section id="design-gallery" class="gallery">
     <div class="section-header md:order-2">
-        <h2 class="leading-20">My<br>Design<br>Gallery</h2>
+        <h2>My<br>Design<br>Gallery</h2>
         <p>Scroll to browse the design gallery.</p>
     </div>
     <div class="section-content">
@@ -124,7 +124,7 @@
         @apply p-6 max-w-7xl mx-auto my-20 lg:flex justify-center gap-10;
 
         &.gallery {
-            @apply items-center grid md:grid-cols-2 w-full mx-0 mx-auto;
+            @apply items-center grid md:grid-cols-2 w-full my-0 mx-auto;
 
             &:nth-of-type(even) {
                 @apply text-right;
@@ -133,7 +133,7 @@
 
         .section-header {
             h2 {
-                @apply text-7xl md:text-7xl xl:text-8xl font-normal uppercase tracking-widest;
+                @apply text-7xl md:text-7xl 2xl:text-8xl font-semibold uppercase tracking-widest leading-20 2xl:leading-25;
             }
 
             p {

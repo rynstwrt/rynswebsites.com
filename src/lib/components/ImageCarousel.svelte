@@ -12,27 +12,22 @@
     let emblaOptions: EmblaOptionsType = {
         loop: true,
         align: "center",
-        // containScroll: "keepSnaps"
-        // containScroll: false
     };
     let emblaPlugins = [
         Autoplay({
             stopOnInteraction: true,
             delay: 5000
         }),
-        // AutoHeight(),
     ];
 
     let scrollSnaps = $state([]);
     let selectedSnap = $state(0);
 
     const goToPrev = () => {
-        // emblaApi?.plugins().autoScroll?.stop();
         emblaApi?.scrollPrev();
     }
 
     const goToNext = () => {
-        // emblaApi?.plugins().autoScroll?.stop();
         emblaApi?.scrollNext()
     }
 
@@ -42,7 +37,6 @@
         emblaApi = event.detail;
         setupSnaps(emblaApi);
         setActiveSnap(emblaApi);
-        // emblaApi.plugins().autoplay?.play();
         emblaApi.on("reInit", setupSnaps);
         emblaApi.on("reInit", setActiveSnap);
         emblaApi.on("select", (emblaApi: EmblaCarouselType) => {
@@ -53,7 +47,7 @@
 
 
 <div class="embla w-full flex-1">
-    <div class="embla__viewport"
+    <div class="embla__viewport border rounded-4xl shadow-xl"
          onemblaInit={onEmblaInit}
          use:useEmblaCarousel={{
              options: emblaOptions,
@@ -62,8 +56,10 @@
         <div class="embla__container">
             {#each images as img}
                 <div class="embla__slide">
-                    <div class="w-full h-full ">
-                        <enhanced:img src={img.src} alt={img.alt}/>
+                    <div class="w-full h-full">
+                        <enhanced:img src={img.src}
+                                      alt={img.alt}
+                                      class="min-w-full"/>
                     </div>
                 </div>
             {/each}
@@ -71,30 +67,15 @@
     </div>
 
 
-    <div class="flex justify-between w-full mt-3 items-center">
-        <div class="me-1">
-            <ButtonGroup>
-                <Button class="embla__prev"
-                        onclick={goToPrev}
-                        variant="outline"
-                        size="icon-sm"
-                        aria-label="Previous image">
-                    <ChevronLeft/>
-                </Button>
-                <Button class="embla__next"
-                        onclick={goToNext}
-                        variant="outline"
-                        size="icon-sm"
-                        aria-label="Next image">
-                    <ChevronRight/>
-                </Button>
-            </ButtonGroup>
-        </div>
+    <div class="flex justify-center w-full mt-3 items-center">
         <div class="embla__dots flex gap-2">
             {#each scrollSnaps as _, idx}
-                <!-- svelte-ignore a11y_consider_explicit_label -->
-                <button class="embla__dot w-3 h-3 border rounded-full {selectedSnap === idx ? 'bg-neutral-400' : ''}"
-                        onclick={() => emblaApi.scrollTo(idx)}>
+                <button class="embla__dot w-3.5 h-3.5 border rounded-full {selectedSnap === idx ? 'bg-neutral-400' : ''}"
+                        aria-label="Image dot {idx+1}"
+                        onclick={() => {
+                            emblaApi.scrollTo(idx);
+                            emblaApi.plugins().autoplay.stop();
+                        }}>
                 </button>
             {/each}
         </div>
