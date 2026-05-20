@@ -25,10 +25,12 @@
 
     const goToPrev = () => {
         emblaApi?.scrollPrev();
+        emblaApi?.plugins().autoplay?.stop();
     }
 
     const goToNext = () => {
         emblaApi?.scrollNext()
+        emblaApi?.plugins().autoplay?.stop();
     }
 
     const setupSnaps = (emblaApi: any) => (scrollSnaps = emblaApi.scrollSnapList());
@@ -67,7 +69,17 @@
     </div>
 
 
+    <p class="text-sm text-muted-foreground font-light italic tracking-wide text-center pt-2">{images[selectedSnap].alt}</p>
+
+
     <div class="flex justify-center w-full mt-3 items-center">
+        <Button variant="link"
+                size="icon-sm"
+                aria-label="Previous slide"
+                class="text-gray-500"
+                onclick={goToPrev}>
+            <ChevronLeft/>
+        </Button>
         <div class="embla__dots flex gap-2">
             {#each scrollSnaps as _, idx}
                 <button class="embla__dot w-3.5 h-3.5 border rounded-full {selectedSnap === idx ? 'bg-neutral-400' : ''}"
@@ -79,6 +91,13 @@
                 </button>
             {/each}
         </div>
+        <Button variant="link"
+                size="icon-sm"
+                aria-label="Previous slide"
+                class="text-gray-500"
+                onclick={goToNext}>
+            <ChevronRight/>
+        </Button>
     </div>
 </div>
 

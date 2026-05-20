@@ -4,6 +4,7 @@
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
+    import { ChevronDown } from "svelte-lucide";
 </script>
 
 
@@ -20,6 +21,7 @@
             Learn More
         </Button>
     </div>
+    <ChevronDown class="absolute bottom-10 w-10 h-10 stroke-1 text-gray-500"/>
 </section>
 
 
@@ -121,10 +123,10 @@
     @reference "layout.css";
 
     section:not(#landing) {
-        @apply p-6 max-w-7xl mx-auto my-20 lg:flex justify-center gap-10;
+        @apply p-6 max-w-7xl mx-auto my-20 lg:flex justify-center gap-10 min-h-130;
 
         &.gallery {
-            @apply items-center grid md:grid-cols-2 w-full my-0 mx-auto;
+            @apply p-10 items-center grid md:grid-cols-2 w-full mx-auto;
 
             &:nth-of-type(even) {
                 @apply text-right;
@@ -133,7 +135,7 @@
 
         .section-header {
             h2 {
-                @apply text-7xl md:text-7xl 2xl:text-8xl font-semibold uppercase tracking-widest leading-20 2xl:leading-25;
+                @apply text-7xl md:text-7xl 2xl:text-8xl font-semibold uppercase tracking-widest leading-20 2xl:leading-24;
             }
 
             p {
