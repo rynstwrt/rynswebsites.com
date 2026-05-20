@@ -75,7 +75,7 @@
     }
 
     html {
-        @apply font-sans;
+        @apply font-sans touch-manipulation;
     }
 
     body {
