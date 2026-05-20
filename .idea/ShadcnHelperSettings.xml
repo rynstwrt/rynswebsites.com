@@ -2346,6 +2346,18 @@
         <option name="homepage" value="https://wensity.com" />
         <option name="urlTemplate" value="https://raw.githubusercontent.com/ksparth12/wensity-shadcn-registry/main/{name}.json" />
       </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-trophy-ui" />
+        <option name="name" value="Trophy-ui" />
+        <option name="namespace" value="@trophy-ui" />
+        <option name="baseUrl" value="https://ui.trophy.so/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="Open-source gamification UI components for streaks, achievements, leaderboards, points, and more. Built on shadcn/ui and Tailwind CSS." />
+        <option name="homepage" value="https://ui.trophy.so" />
+        <option name="urlTemplate" value="https://ui.trophy.so/r/{name}.json" />
+      </RegistryConfigState>
     </registryConfigs>
   </component>
 </project>

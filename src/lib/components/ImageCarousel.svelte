@@ -1,19 +1,19 @@
 <script lang="ts">
     import useEmblaCarousel from "embla-carousel-svelte";
-    import AutoHeight from "embla-carousel-auto-height";
     import type { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
     import { ChevronRight, ChevronLeft } from "@lucide/svelte";
     import { Button } from "$ui/button";
     import Autoplay from "embla-carousel-autoplay";
+    import { ButtonGroup } from "$ui/button-group";
 
     let {images, reversed = false} = $props();
 
     let emblaApi: EmblaCarouselType;
     let emblaOptions: EmblaOptionsType = {
         loop: true,
-        align: "end",
+        align: "center",
         // containScroll: "keepSnaps"
-        containScroll: false
+        // containScroll: false
     };
     let emblaPlugins = [
         Autoplay({
@@ -55,30 +55,40 @@
 <div class="embla w-full flex-1">
     <div class="embla__viewport"
          onemblaInit={onEmblaInit}
-         use:useEmblaCarousel={{options: emblaOptions, plugins: emblaPlugins}}>
+         use:useEmblaCarousel={{
+             options: emblaOptions,
+             plugins: emblaPlugins
+         }}>
         <div class="embla__container">
             {#each images as img}
                 <div class="embla__slide">
-                    <enhanced:img src={img.src} alt={img.alt}/>
+                    <div class="w-full h-full ">
+                        <enhanced:img src={img.src} alt={img.alt}/>
+                    </div>
                 </div>
             {/each}
         </div>
     </div>
 
-    <div class="flex justify-between items-center mt-2">
-        <div class="space-x-2 {reversed ? 'order-2' : ''}">
-            <Button class="embla__prev"
-                    onclick={goToPrev}
-                    variant="outline"
-                    size="icon-lg">
-                <ChevronLeft/>
-            </Button>
-            <Button class="embla__next"
-                    onclick={goToNext}
-                    variant="outline"
-                    size="icon-lg">
-                <ChevronRight/>
-            </Button>
+
+    <div class="flex justify-between w-full mt-3 items-center">
+        <div class="me-1">
+            <ButtonGroup>
+                <Button class="embla__prev"
+                        onclick={goToPrev}
+                        variant="outline"
+                        size="icon-sm"
+                        aria-label="Previous image">
+                    <ChevronLeft/>
+                </Button>
+                <Button class="embla__next"
+                        onclick={goToNext}
+                        variant="outline"
+                        size="icon-sm"
+                        aria-label="Next image">
+                    <ChevronRight/>
+                </Button>
+            </ButtonGroup>
         </div>
         <div class="embla__dots flex gap-2">
             {#each scrollSnaps as _, idx}
@@ -111,85 +121,3 @@
         min-width: 0;
     }
 </style>
-
-
-<!--<script l ng="ts">-->
-<!--    import * as Carousel from "$ui/carousel";-->
-<!--    import Autoplay from "embla-carousel-autoplay";-->
-<!--    import type { CarouselAPI } from "$ui/carousel/context";-->
-<!--    import ImageDialog from "$lib/components/ImageDialog.svelte";-->
-<!--    import AutoHeight from "embla-carousel-auto-height";-->
-
-<!--    let {images} = $props();-->
-
-<!--    let imageDialogOpen = $state(false);-->
-
-<!--    let api = $state<CarouselAPI>();-->
-
-<!--    const count = $derived(api ? api.scrollSnapList().length : 0);-->
-<!--    let current = $state(0);-->
-<!--    let clickedImage: object = $state({src: "", alt: ""});-->
-
-<!--    $effect(() => {-->
-<!--        if (api) {-->
-<!--            current = api.selectedScrollSnap();-->
-
-<!--            api.on("select", () => {-->
-<!--                current = api!.selectedScrollSnap();-->
-<!--            });-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
-
-
-<!--<ImageDialog bind:open={imageDialogOpen}-->
-<!--             image={clickedImage}/>-->
-
-
-<!--<Carousel.Root-->
-<!--        class="w-full"-->
-<!--        opts={{-->
-<!--               loop: true,-->
-<!--               align: "center"-->
-<!--        }}-->
-<!--        plugins={[-->
-<!--            Autoplay({-->
-<!--                delay: 5000,-->
-<!--                stopOnInteraction: true-->
-<!--            }),-->
-<!--            AutoHeight()-->
-<!--        ]}-->
-<!--        setApi={emblaApi => api = emblaApi}-->
-<!--        orientation="vertical">-->
-<!--    <Carousel.Content class="">-->
-<!--        {#each images as image}-->
-<!--            &lt;!&ndash;<Carousel.Item class="pt-1 md:basis-1/2 lg:basis-1/3"&ndash;&gt;-->
-<!--            <Carousel.Item class=""-->
-<!--                           onclick={(event) => {-->
-<!--                               const target: any = event.target;-->
-<!--                               clickedImage = {src: target?.src, alt: target?.alt}-->
-<!--                               imageDialogOpen = true-->
-<!--                           }}>-->
-<!--                <enhanced:img src={image.src}-->
-<!--                              alt={image.alt}-->
-<!--                              class="border border-border/50 rounded-xl"/>-->
-<!--            </Carousel.Item>-->
-<!--        {/each}-->
-<!--    </Carousel.Content>-->
-<!--    <Carousel.Previous/>-->
-<!--    <Carousel.Next/>-->
-<!--</Carousel.Root>-->
-
-<!--&lt;!&ndash;<p class="text-muted-foreground py-2 text-center text-sm font-thin">&ndash;&gt;-->
-<!--&lt;!&ndash;    <span class="italic font-normal">{images[current].alt}</span> - ({current + 1} of {count})&ndash;&gt;-->
-<!--&lt;!&ndash;</p>&ndash;&gt;-->
-
-
-<!--<style>-->
-<!--    /*.embla__container {*/-->
-<!--    /*    display: flex;*/-->
-<!--    /*    align-items: flex-start;*/-->
-<!--    /*}*/-->
-<!--</style>-->
-
-

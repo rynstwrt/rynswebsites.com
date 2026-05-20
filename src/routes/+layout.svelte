@@ -20,7 +20,7 @@
 {@render children()}
 
 
-<footer class="backdrop-brightness-80">
+<footer class="backdrop-brightness-90">
     <div class="p-10 flex justify-between gap-6">
         <div class="max-w-xs">
             <h2 class="text-2xl font-medium">Ryn's Websites</h2>

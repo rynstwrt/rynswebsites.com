@@ -43,7 +43,7 @@
 
 <section id="design-gallery" class="gallery">
     <div class="section-header md:order-2">
-        <h2>My<br>Design<br>Gallery</h2>
+        <h2 class="leading-20">My<br>Design<br>Gallery</h2>
         <p>Scroll to browse the design gallery.</p>
     </div>
     <div class="section-content">
@@ -133,9 +133,7 @@
 
         .section-header {
             h2 {
-                /*@apply text-7xl font-medium tracking-wide ;*/
-                /*@apply text-8xl font-medium uppercase tracking-wider whitespace-pre-line [word-spacing:999999999999px];*/
-                @apply text-7xl md:text-7xl xl:text-8xl font-semibold uppercase tracking-widest;
+                @apply text-7xl md:text-7xl xl:text-8xl font-normal uppercase tracking-widest;
             }
 
             p {
