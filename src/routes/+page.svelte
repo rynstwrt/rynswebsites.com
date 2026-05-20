@@ -10,7 +10,7 @@
 <LandingBg/>
 
 
-<section id="landing" class="h-full flex justify-center items-center ">
+<section id="landing" class="h-dvh flex justify-center items-center ">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
         <p class="text-lg my-4 text-gray-400">Your place for web development and graphic design.</p>
