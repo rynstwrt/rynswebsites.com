@@ -58,6 +58,6 @@
     @reference "layout.css";
 
     footer {
-        @apply bg-background-3;
+        @apply bg-background-2;
     }
 </style>

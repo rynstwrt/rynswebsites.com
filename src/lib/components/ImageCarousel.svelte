@@ -5,27 +5,28 @@
     import { ChevronRight, ChevronLeft } from "@lucide/svelte";
     import { Button } from "$ui/button";
     import AutoScroll from "embla-carousel-auto-scroll";
+    import Autoplay from "embla-carousel-autoplay";
 
-    let {images} = $props();
+    let {images, reversed = false} = $props();
 
     let emblaApi: EmblaCarouselType;
     let emblaOptions: EmblaOptionsType = {
         loop: true,
-        align: "center",
+        align: "end",
         // containScroll: "keepSnaps"
         containScroll: false
     };
     let emblaPlugins = [
-        // Autoplay({
-        //     stopOnInteraction: true,
-        //     delay: 5000
-        // }),
-        AutoHeight(),
-        AutoScroll({
-            startDelay: 0,
+        Autoplay({
             stopOnInteraction: true,
-            speed: 2
-        })
+            delay: 5000
+        }),
+        AutoHeight(),
+        // AutoScroll({
+        //     startDelay: 0,
+        //     stopOnInteraction: true,
+        //     speed: 2
+        // })
     ];
 
     let scrollSnaps = $state([]);
@@ -51,7 +52,7 @@
         emblaApi.on("reInit", setupSnaps);
         emblaApi.on("reInit", setActiveSnap);
         emblaApi.on("select", (emblaApi: EmblaCarouselType) => {
-           selectedSnap = emblaApi.selectedScrollSnap();
+            selectedSnap = emblaApi.selectedScrollSnap();
         });
     }
 </script>
@@ -70,13 +71,21 @@
         </div>
     </div>
 
-    <div class="flex justify-between items-center gap-2 mt-2">
-        <Button class="embla__prev"
-                onclick={goToPrev}
-                variant="outline"
-                size="icon-lg">
-            <ChevronLeft/>
-        </Button>
+    <div class="flex justify-between items-center mt-2">
+        <div class="space-x-2 {reversed ? 'order-2' : ''}">
+            <Button class="embla__prev"
+                    onclick={goToPrev}
+                    variant="outline"
+                    size="icon-lg">
+                <ChevronLeft/>
+            </Button>
+            <Button class="embla__next"
+                    onclick={goToNext}
+                    variant="outline"
+                    size="icon-lg">
+                <ChevronRight/>
+            </Button>
+        </div>
         <div class="embla__dots flex gap-2">
             {#each scrollSnaps as _, idx}
                 <!-- svelte-ignore a11y_consider_explicit_label -->
@@ -85,12 +94,6 @@
                 </button>
             {/each}
         </div>
-        <Button class="embla__next"
-                onclick={goToNext}
-                variant="outline"
-                size="icon-lg">
-            <ChevronRight/>
-        </Button>
     </div>
 </div>
 

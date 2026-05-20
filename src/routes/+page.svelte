@@ -4,24 +4,6 @@
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
-    import useEmblaCarousel from "embla-carousel-svelte";
-    import Autoplay from "embla-carousel-autoplay";
-    import AutoHeight from "embla-carousel-auto-height";
-
-    const graphicImages = [
-        {src: "img/design/OrangeCyanHeadshot.jpg", alt: "Orange and Cyan Headshot"},
-        {src: "img/design/ScurryDog.png", alt: "ScurryDog Logo"},
-        {src: "img/design/NutriwiseLogo.png", alt: "Nutriwise Logo"},
-        {src: "img/design/glitch1.jpg", alt: "Glitch Design 1"},
-        {src: "img/design/glitch2.jpg", alt: "Glitch Design 2"},
-        {src: "img/design/glitch3.jpg", alt: "Glitch Design 3"},
-        {src: "img/design/r_designs/1.png", alt: "R Design 1"},
-        {src: "img/design/r_designs/5.png", alt: "R Design 2"},
-        {src: "img/design/r_designs/6.png", alt: "R Design 3"},
-        {src: "img/design/r_designs/7.png", alt: "R Design 4"},
-    ];
-
-
 </script>
 
 
@@ -76,7 +58,8 @@
             {src: "img/design/r_designs/5.png", alt: "R Design 2"},
             {src: "img/design/r_designs/6.png", alt: "R Design 3"},
             {src: "img/design/r_designs/7.png", alt: "R Design 4"},
-        ]}/>
+            ]}
+                       reversed={true}/>
     </div>
 </section>
 
@@ -124,7 +107,7 @@
 
 
 <section id="contact-section" class="lg:flex justify-center gap-20">
-    <div class="section-header">
+    <div class="section-header mb-9">
         <h2>Contact</h2>
         <p>Ask me anything!</p>
     </div>
@@ -159,11 +142,5 @@
                 @apply text-xl text-gray-500 mt-2 tracking-wide;
             }
         }
-
-        .section-content {
-
-        }
     }
-
-
 </style>

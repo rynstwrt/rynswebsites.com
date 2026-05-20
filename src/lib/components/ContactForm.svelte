@@ -17,7 +17,7 @@
 </script>
 
 
-<Card class="shadow-lg transition-shadow flex-1 max-w-2xl place-self-center">
+<Card class="shadow-lg transition-shadow flex-1 w-full max-w-2xl place-self-center">
     <CardContent>
         <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
             <Field.Field class="gap-1 col-span-full sm:col-span-1">
