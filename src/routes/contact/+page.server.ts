@@ -19,7 +19,7 @@ export const actions = {
         try {
             const response = await resend.emails.send({
                 from: `Contact Form <contactform@rynswebsites.com>`,
-                to: `rynstwrt17@gmail.com`,
+                to: `ryn@rynswebsites.com`,
                 subject: `New message from ${name}`,
                 replyTo: email,
                 html: `<p><strong>Name:</strong> ${name}</p>

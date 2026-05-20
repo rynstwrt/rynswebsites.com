@@ -1,6 +1,5 @@
 <script lang="ts">
     import './layout.css';
-    // import BreakpointVision from "$lib/components/BreakpointVision.svelte";
     import { Button, buttonVariants } from "$ui/button";
     let {children} = $props();
 </script>
@@ -19,6 +18,7 @@
 
 
 {@render children()}
+
 
 <footer class="backdrop-brightness-80">
     <div class="p-10 flex justify-between gap-6">
@@ -55,7 +55,7 @@
 
 
 <style>
-    @reference "./layout.css";
+    @reference "layout.css";
 
     footer {
         @apply bg-background-3;
