@@ -5,6 +5,25 @@
     import LandingBg from "$lib/components/LandingBG.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
     import { ChevronDown } from "svelte-lucide";
+    import { animate, utils, onScroll } from "animejs";
+    import { onMount } from "svelte";
+
+    let downArrow: any;
+
+    onMount(() => {
+        animate(downArrow, {
+            bottom: '15rem',
+            duration: 2000,
+            loop: true,
+            alternate: true,
+            autoplay: onScroll({
+                container: document.body,
+                // enter: 'bottom-=50 top',
+                // leave: 'top+=60 bottom',
+                debug: true
+            })
+        });
+    });
 </script>
 
 
@@ -21,7 +40,7 @@
             Learn More
         </Button>
     </div>
-    <ChevronDown class="absolute bottom-10 w-10 h-10 stroke-1 text-gray-500"/>
+    <ChevronDown bind:this={downArrow} class="absolute bottom-10 w-10 h-10 stroke-1 text-gray-500"/>
 </section>
 
 
