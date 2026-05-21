@@ -45,6 +45,7 @@
 		"@sveltejs/enhanced-img": "^0.10.4",
 		"@types/node": "^25.8.0",
 		"@validex/core": "^1.0.3",
+		"animejs": "^4.4.1",
 		"bits-ui": "^2.18.1",
 		"embla-carousel": "^8.6.0",
 		"embla-carousel-auto-height": "^8.6.0",

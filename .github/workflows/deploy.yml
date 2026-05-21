@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge main -> production
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: main
+          target_branch: production
+          github_token: ${{ secrets.GITHUB_TOKEN }}
