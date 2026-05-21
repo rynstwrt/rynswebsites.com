@@ -20,7 +20,7 @@
                 container: document.body,
                 // enter: 'bottom-=50 top',
                 // leave: 'top+=60 bottom',
-                debug: true
+                // debug: true
             })
         });
     });
