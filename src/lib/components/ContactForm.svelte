@@ -1,6 +1,5 @@
 <script lang="ts">
     import { Card, CardContent } from "$ui/card";
-    import { Blocks, Mail, MessageSquareText, Phone, User } from "svelte-lucide";
     import { Input } from "$ui/input";
     import { Select, SelectContent, SelectItem, SelectTrigger } from "$ui/select";
     import { Button } from "$ui/button";
@@ -22,7 +21,6 @@
         <form method="POST" action="/contact" class="grid gap-3 sm:grid-cols-3 sm:grid-rows-4">
             <Field.Field class="gap-1 col-span-full sm:col-span-1">
                 <Field.Label class="flex items-center">
-                    <User size="13"/>
                     Name
                 </Field.Label>
                 <Input name="name"
@@ -32,7 +30,6 @@
 
             <Field.Field class="gap-1 col-span-full sm:col-1">
                 <Field.Label class="flex items-center">
-                    <Mail size="13"/>
                     Email
                 </Field.Label>
                 <Input name="email"
@@ -42,7 +39,6 @@
 
             <Field.Field class="gap-1 col-span-full sm:col-1">
                 <Field.Label class="flex items-center">
-                    <Phone size="13"/>
                     Phone
                 </Field.Label>
                 <Input name="phone"
@@ -52,7 +48,6 @@
 
             <Field.Field class="gap-1 col-span-full sm:col-1">
                 <Field.Label class="flex items-center">
-                    <Blocks size="13"/>
                     Services
                 </Field.Label>
                 <Select type="multiple" name="services" bind:value={serviceSelectValue}>
@@ -67,7 +62,6 @@
 
             <Field.Field class="gap-1 sm:col-span-2 sm:col-start-2 sm:row-span-4 sm:row-start-1">
                 <Field.Label class="flex items-center">
-                    <MessageSquareText size="13"/>
                     Message
                 </Field.Label>
                 <Textarea name="message"

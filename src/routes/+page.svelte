@@ -10,24 +10,31 @@
 
     let downArrow: any;
 
-    onMount(() => {
-        animate(downArrow, {
-            bottom: '15rem',
-            duration: 2000,
-            loop: true,
-            alternate: true,
-            autoplay: onScroll({
-                container: document.body,
-                // enter: 'bottom-=50 top',
-                // leave: 'top+=60 bottom',
-                // debug: true
-            })
-        });
-    });
+    // onMount(() => {
+    //     animate(downArrow, {
+    //         bottom: '15rem',
+    //         duration: 2000,
+    //         loop: true,
+    //         alternate: true,
+    //         autoplay: onScroll({
+    //             container: document.body,
+    //             // enter: 'bottom-=50 top',
+    //             // leave: 'top+=60 bottom',
+    //             // debug: true
+    //         })
+    //     });
+    // });
 </script>
 
 
 <LandingBg/>
+
+
+<!--<div class="w-full h-300 overflow-auto bg-red-500 snap-mandatory snap-y *:snap-start *:w-full *:h-200 *:bg-green-400">-->
+<!--    <p>asdf</p>-->
+<!--    <p>asdf</p>-->
+<!--    <p>asdf</p>-->
+<!--</div>-->
 
 
 <section id="landing" class="h-dvh flex justify-center items-center ">
@@ -40,7 +47,7 @@
             Learn More
         </Button>
     </div>
-    <ChevronDown bind:this={downArrow} class="absolute bottom-10 w-10 h-10 stroke-1 text-gray-500"/>
+    <ChevronDown bind:this={downArrow} class="absolute bottom-2 w-10 h-10 stroke-1 text-gray-500"/>
 </section>
 
 
@@ -65,7 +72,7 @@
 <section id="design-gallery" class="gallery">
     <div class="section-header md:order-2">
         <h2>My<br>Design<br>Gallery</h2>
-        <p>Scroll to browse the design gallery.</p>
+        <p>Some of my designs for</p>
     </div>
     <div class="section-content">
         <ImageCarousel images={[
@@ -140,6 +147,10 @@
 
 <style>
     @reference "layout.css";
+
+    /*section {*/
+    /*    scroll-snap-align: center;*/
+    /*}*/
 
     section:not(#landing) {
         @apply p-6 max-w-7xl mx-auto my-20 lg:flex justify-center gap-10 min-h-130;
