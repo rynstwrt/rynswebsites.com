@@ -59,5 +59,6 @@
 
     footer {
         @apply bg-background-2;
+        scroll-snap-align: end !important;
     }
 </style>
