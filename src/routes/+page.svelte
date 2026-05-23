@@ -150,10 +150,6 @@
 <style>
     @reference "layout.css";
 
-    section#landing {
-        scroll-snap-align: start !important;
-    }
-
     section:not(#landing) {
         @apply p-6 max-w-7xl mx-auto my-20 lg:flex justify-center gap-10 min-h-130;
 

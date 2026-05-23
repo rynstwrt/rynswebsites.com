@@ -82,10 +82,9 @@
     body {
         @apply bg-background text-foreground;
         scroll-snap-type: y mandatory;
-        /*scroll-snap-type: y proximity;*/
 
-        section, footer {
-            scroll-snap-align: center !important;
+        section, #landing {
+            scroll-snap-align: start !important;
         }
     }
 }
