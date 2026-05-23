@@ -5,8 +5,8 @@
     import LandingBg from "$lib/components/LandingBG.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
     import { ChevronDown } from "svelte-lucide";
-    import { animate, utils, onScroll } from "animejs";
-    import { onMount } from "svelte";
+    // import { animate, utils, onScroll } from "animejs";
+    // import { onMount } from "svelte";
 
     let downArrow: any;
 
@@ -54,7 +54,9 @@
 <section id="web-gallery" class="gallery">
     <div class="section-header">
         <h2>My<br>website<br>Gallery</h2>
-        <p>Scroll to browse the web gallery.</p>
+        <!--<p>A <i>small</i> collection of <span class="underline">some</span> of my website designs and showcases.<br>Swipe or click the indicator dots to navigate.</p>-->
+        <p>A <i>small</i> collection of <span class="underline">some</span> of my website designs and showcases.</p>
+        <p>Swipe or click the indicator dots to navigate.</p>
     </div>
     <div class="section-content">
         <ImageCarousel images={[
@@ -72,8 +74,8 @@
 <section id="design-gallery" class="gallery">
     <div class="section-header md:order-2">
         <h2>My<br>Design<br>Gallery</h2>
-        <p>Some of my designs for</p>
-    </div>
+        <p>A <i>small</i> collection of <span class="underline">some</span> of my graphic design pieces.</p>
+        <p>Swipe or click the indicator dots to navigate.</p>    </div>
     <div class="section-content">
         <ImageCarousel images={[
             {src: "img/design/OrangeCyanHeadshot.jpg", alt: "Orange and Cyan Headshot"},
