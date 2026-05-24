@@ -12,8 +12,7 @@
     import { toast } from "svelte-sonner";
 
     let {
-        title,
-        description,
+        Icon,
         value,
         classes = "",
     } = $props();
@@ -22,18 +21,17 @@
 </script>
 
 
-<Card class="w-full max-w-sm shadow-xl {classes}">
+<Card class="w-full max-w-2xs shadow-xl {classes}">
     <CardHeader>
-        <CardTitle class="text-3xl font-bold flex justify-between">
-            <span class="max-w-50">{title}</span>
+        <CardTitle class="text-3xl font-bold flex justify-center">
+            <Icon class="w-15 h-15"/>
         </CardTitle>
-
-        <CardDescription class="text-base">{description}</CardDescription>
     </CardHeader>
 
     {#if viewing}
         <CardContent class="h-full flex justify-center items-center gap-2">
-            <p class="text-base font-normal text-foreground tracking-wide">{value}</p>
+            <p class="text-base font-normal text-foreground">{value}</p>
+
             <Button size="icon-sm"
                     onclick={() => {
                         try {
@@ -45,7 +43,13 @@
                                 }
                             });
                         } catch (err) {
-                            alert(err);
+                            toast(`Error`, {
+                                description: "An error occurred",
+                                action: {
+                                    label: "Close",
+                                    onClick: () => {}
+                                }
+                            });
                         }
                     }}>
                 <CopyPlus/>
@@ -56,11 +60,10 @@
     {#if !viewing}
         <CardFooter>
             <Button class="w-full"
-                    size="lg"
                     onclick={() => {
                         viewing = true;
                     }}>
-                View
+                Click to Reveal
             </Button>
         </CardFooter>
     {/if}

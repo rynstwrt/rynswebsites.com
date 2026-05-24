@@ -4,7 +4,7 @@
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
-    import { ChevronDown } from "svelte-lucide";
+    import { ChevronDown, Mail, Phone } from "svelte-lucide";
     import ContactCard from "$lib/components/ContactCard.svelte";
     // import { animate, utils, onScroll } from "animejs";
     // import { onMount } from "svelte";
@@ -138,12 +138,8 @@
     </div>
     <div class="section-content">
         <div class="w-full grid justify-items-center place-self-center gap-4 md:grid-cols-2">
-            <ContactCard title="Email"
-                         description="Click to view my email."
-                         value="ryn@rynswebsites.com"/>
-            <ContactCard title="Phone"
-                         description="Click to view my phone number."
-                         value="972-898-2714"/>
+            <ContactCard Icon={Mail} value="ryn@rynswebsites.com"/>
+            <ContactCard Icon={Phone} value="972-898-2714"/>
         </div>
     </div>
 </section>
