@@ -57,6 +57,6 @@
                 size="lg"
                 onclick={() => {
                     document.querySelector("#contact-section")?.scrollIntoView()
-                }}>Purchase</Button>
+                }}>Contact</Button>
     </CardFooter>
 </Card>
