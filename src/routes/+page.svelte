@@ -137,7 +137,7 @@
         <p>Reach out to place an order or to ask any questions.</p>
     </div>
     <div class="section-content">
-        <div class="w-full grid justify-items-center place-self-center gap-4 md:grid-cols-2">
+        <div class="w-full max-w-2xl grid justify-items-center place-self-center gap-4 md:grid-cols-2">
             <ContactCard Icon={Mail} value="ryn@rynswebsites.com"/>
             <ContactCard Icon={Phone} value="972-898-2714"/>
         </div>
