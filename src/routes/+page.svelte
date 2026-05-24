@@ -131,17 +131,6 @@
 </section>
 
 
-<!--<section id="contact-section" class="lg:flex justify-center gap-20">-->
-<!--    <div class="section-header mb-9">-->
-<!--        <h2>Contact</h2>-->
-<!--        <p>Ask me anything!</p>-->
-<!--    </div>-->
-<!--    <div class="section-content">-->
-<!--        <ContactForm/>-->
-<!--    </div>-->
-<!--</section>-->
-
-
 <section id="contact-section" class="flex flex-col">
     <div class="section-header mb-9">
         <h2>Contact</h2>
