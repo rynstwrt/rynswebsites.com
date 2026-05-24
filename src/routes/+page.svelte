@@ -37,10 +37,11 @@
         <p class="text-lg my-4 text-gray-400">Your place for web development and graphic design.</p>
         <Button variant="default"
                 size="lg"
-                onclick={() => document.querySelector("section:nth-of-type(2)")?.scrollIntoView({block: "start"})}>
+                onclick={() => document.querySelector("#landing + section")?.scrollIntoView()}>
             Learn More
         </Button>
     </div>
+
     <ChevronDown bind:this={downArrow} class="absolute bottom-2 w-10 h-10 stroke-1 text-gray-500"/>
 </section>
 
