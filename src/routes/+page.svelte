@@ -5,6 +5,7 @@
     import LandingBg from "$lib/components/LandingBG.svelte";
     import ContactForm from "$lib/components/ContactForm.svelte";
     import { ChevronDown } from "svelte-lucide";
+    import ContactCard from "$lib/components/ContactCard.svelte";
     // import { animate, utils, onScroll } from "animejs";
     // import { onMount } from "svelte";
 
@@ -30,13 +31,6 @@
 <LandingBg/>
 
 
-<!--<div class="w-full h-300 overflow-auto bg-red-500 snap-mandatory snap-y *:snap-start *:w-full *:h-200 *:bg-green-400">-->
-<!--    <p>asdf</p>-->
-<!--    <p>asdf</p>-->
-<!--    <p>asdf</p>-->
-<!--</div>-->
-
-
 <section id="landing" class="h-dvh flex justify-center items-center ">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
@@ -51,7 +45,7 @@
 </section>
 
 
-<section id="web-gallery" class="gallery">
+<section id="web-gallery" class="gallery select-none">
     <div class="section-header">
         <h2>My<br>website<br>Gallery</h2>
         <!--<p>A <i>small</i> collection of <span class="underline">some</span> of my website designs and showcases.<br>Swipe or click the indicator dots to navigate.</p>-->
@@ -71,11 +65,11 @@
 </section>
 
 
-<section id="design-gallery" class="gallery">
+<section id="design-gallery" class="gallery select-none">
     <div class="section-header md:order-2">
         <h2>My<br>Design<br>Gallery</h2>
         <p>A <i>small</i> collection of <span class="underline">some</span> of my graphic design pieces.</p>
-        <p>Swipe or click the indicator dots to navigate.</p>    </div>
+        <p>Swipe or click the indicator dots to navigate.</p></div>
     <div class="section-content">
         <ImageCarousel images={[
             {src: "img/design/OrangeCyanHeadshot.jpg", alt: "Orange and Cyan Headshot"},
@@ -136,13 +130,31 @@
 </section>
 
 
-<section id="contact-section" class="lg:flex justify-center gap-20">
+<!--<section id="contact-section" class="lg:flex justify-center gap-20">-->
+<!--    <div class="section-header mb-9">-->
+<!--        <h2>Contact</h2>-->
+<!--        <p>Ask me anything!</p>-->
+<!--    </div>-->
+<!--    <div class="section-content">-->
+<!--        <ContactForm/>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<section id="contact-section" class="flex flex-col">
     <div class="section-header mb-9">
         <h2>Contact</h2>
-        <p>Ask me anything!</p>
+        <p>Reach out to place an order or to ask any questions.</p>
     </div>
     <div class="section-content">
-        <ContactForm/>
+        <div class="w-full grid justify-items-center place-self-center gap-4 md:grid-cols-2">
+            <ContactCard title="Email"
+                         description="Click to view my email."
+                         value="ryn@rynswebsites.com"/>
+            <ContactCard title="Phone"
+                         description="Click to view my phone number."
+                         value="972-898-2714"/>
+        </div>
     </div>
 </section>
 

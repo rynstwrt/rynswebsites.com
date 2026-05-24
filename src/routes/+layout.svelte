@@ -1,6 +1,7 @@
 <script lang="ts">
     import './layout.css';
     import { Button, buttonVariants } from "$ui/button";
+    import { Toaster } from "$ui/sonner";
     let {children} = $props();
 </script>
 
@@ -15,6 +16,9 @@
     <meta name="twitter:image" content="https://rynswebsites.com/preview.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
 </svelte:head>
+
+
+<Toaster />
 
 
 {@render children()}
