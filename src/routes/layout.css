@@ -81,10 +81,11 @@
 
     body {
         @apply bg-background text-foreground;
-        scroll-snap-type: y mandatory;
+        /*scroll-snap-type: y mandatory;*/
 
-        section, #landing {
-            scroll-snap-align: start !important;
+        #landing, section.gallery, #price-section, #contact-section {
+            /*scroll-snap-align: start;*/
+            /*scroll-snap-stop: normal;*/
         }
     }
 }
