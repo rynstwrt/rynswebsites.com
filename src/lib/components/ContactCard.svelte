@@ -22,7 +22,7 @@
 </script>
 
 
-<Card class="w-full max-w-md shadow-xl {classes}">
+<Card class="w-full max-w-sm shadow-xl {classes}">
     <CardHeader>
         <CardTitle class="text-3xl font-bold flex justify-between">
             <span class="max-w-50">{title}</span>
