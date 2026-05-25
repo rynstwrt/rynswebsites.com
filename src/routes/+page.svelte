@@ -3,13 +3,13 @@
     import PriceCard from "$lib/components/PriceCard.svelte";
     import ImageCarousel from "$lib/components/ImageCarousel.svelte";
     import LandingBg from "$lib/components/LandingBG.svelte";
-    import ContactForm from "$lib/components/ContactForm.svelte";
+    // import ContactForm from "$lib/components/ContactForm.svelte";
     import { ChevronDown, Mail, Phone } from "svelte-lucide";
     import ContactCard from "$lib/components/ContactCard.svelte";
     // import { animate, utils, onScroll } from "animejs";
     // import { onMount } from "svelte";
 
-    let downArrow: any;
+    // let downArrow: any;
 
     // onMount(() => {
     //     animate(downArrow, {
@@ -30,7 +30,6 @@
 
 <LandingBg/>
 
-
 <section id="landing" class="h-dvh flex justify-center items-center ">
     <div class="max-w-xs">
         <h1 class="text-5xl font-bold">I'm Ryn, <br>designer and developer.</h1>
@@ -42,7 +41,7 @@
         </Button>
     </div>
 
-    <ChevronDown bind:this={downArrow} class="absolute bottom-2 w-10 h-10 stroke-1 text-gray-500"/>
+    <ChevronDown id="down-chevron" class="absolute bottom-2 w-10 h-10 stroke-1 text-gray-500 animate-bounce"/>
 </section>
 
 
